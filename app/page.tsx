@@ -1,65 +1,118 @@
-import Image from "next/image";
+import DashboardHeader from "@/components/dashboard/DashboardHeader";
+import KpiCard from "@/components/dashboard/KpiCard";
+import EclNpfTrendChart from "@/components/dashboard/EclNpfTrendChart";
+import StagingMigration from "@/components/dashboard/StagingMigration";
+import SectorRiskHeatmap from "@/components/dashboard/SectorRiskHeatmap";
+import StatusCard from "@/components/dashboard/StatusCard";
+import BucketDpd from "@/components/dashboard/BucketDpd";
+import SlikGauge from "@/components/dashboard/SlikGauge";
+import RiskTable from "@/components/dashboard/RiskTable";
 
-export default function Home() {
+import { getDashboardDataKPI } from "@/app/services/dashboardKPI.service";
+import { getDashboardDataECLNPFTrend } from "./services/dashboardECLNCFTrend.service";
+import { getDashboardDataStagingMigration } from "./services/dashboardStagingMigration.services";
+import { getDashboardDataSectorialHeatMap } from "./services/dashboardSectorialHeatmap.service";
+import { getDashboardDataBucketDPD } from "./services/dashboardBucketDPD.service";
+import { getDashboardDataTopBorrowers } from "./services/dashboardTopBorrowers.service";
+import { getDashboardDataSlik } from "./services/dashboardDataSlik.service";
+
+async function getDashboard() {
+  const res = await fetch("http://localhost:3000/api/dashboard", {
+    cache: "no-store",
+  });
+  if (!res.ok) throw new Error("Failed to load dashboard");
+  return res.json();
+}
+
+export default async function Page() {
+  const data = await getDashboard();
+  const data2 = await getDashboardDataKPI();
+  const dataECLNCFTrend = await getDashboardDataECLNPFTrend();
+  const dataStagingMigration = await getDashboardDataStagingMigration();
+  const dataDataSectorialHeatMap = await getDashboardDataSectorialHeatMap();
+  const dataDashboardDataBucketDPD = await getDashboardDataBucketDPD();
+  const dataDataTopBorrowers = await getDashboardDataTopBorrowers();
+  const slikData = await getDashboardDataSlik();
+
+  // hitung total perubahan CKPN
+  const totalChange = slikData.rows.reduce(
+    (a: number, b: any) => a + (b.changeValue ?? 0),
+    0,
+  );
+
+  // konversi ke skala 0–100
+  const gaugeValue = Math.min(
+    Math.max(50 + totalChange / 1_000_000_000, 0),
+    100,
+  );
+  console.log("GaugeValue", gaugeValue);
+  console.log("SLIK DATA:", slikData.rows);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <main className="min-h-screen bg-slate-100">
+      <DashboardHeader
+        bankName={data.meta.bankName}
+        reportTitle={data.meta.reportTitle}
+        periodLabel={data.meta.periodLabel}
+        dataCutoff={data.meta.dataCutoff}
+      />
+
+      <div className="w-full px-6 py-6">
+        {/* KPI */}
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {data2.kpis.map((k: any) => (
+            <KpiCard
+              key={k.key}
+              label={k.label}
+              valueText={k.valueText}
+              mom={k.mom}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          ))}
         </div>
-      </main>
-    </div>
+
+        {/* Row 1 */}
+        <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
+          <EclNpfTrendChart data={dataECLNCFTrend.eclNpfTrend} />
+          <StagingMigration
+            title={dataStagingMigration.stagingMigration.title}
+            stages={dataStagingMigration.stagingMigration.stages}
+            notes={dataStagingMigration.stagingMigration.notes}
+          />
+          <SectorRiskHeatmap items={dataDataSectorialHeatMap.sectorRisk} />
+        </div>
+
+        {/* Row 2 */}
+        <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
+          {/* <StatusCard {...data.status} /> */}
+          <BucketDpd
+            title={dataDashboardDataBucketDPD.bucketDpd.title}
+            stages={dataDashboardDataBucketDPD.bucketDpd.stages}
+            rows={dataDashboardDataBucketDPD.bucketDpd.rows}
+          />
+
+          <SlikGauge
+            value={gaugeValue}
+            note="Pergerakan CKPN bulan berjalan"
+            actions={["Detail", "Export"]}
+            periode={slikData.periode} // ← TAMBAHKAN INI
+            categories={slikData.rows}
+          />
+        </div>
+
+        {/* Table */}
+        <div className="mt-4">
+          <RiskTable
+            titleLeft={
+              dataDataTopBorrowers.meta.reportTitle || "Top 10 Borrowers"
+            }
+            titleCenter={
+              dataDataTopBorrowers.meta.periodLabel || "Latest Month"
+            }
+            rows={dataDataTopBorrowers.rows}
+            footer="Data diperbarui setiap bulan"
+          />
+        </div>
+      </div>
+    </main>
   );
 }
