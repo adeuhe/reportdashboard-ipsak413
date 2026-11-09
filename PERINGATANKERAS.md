@@ -1,0 +1,1 @@
+DILARANG KERAS UNTUK MENGHAPUS FILE, DB, TABLE dan Create Table, DB Create Schema, Create Field, Create Query  YANG ADA DI PROJECT INI

@@ -1,0 +1,817 @@
+{
+  "lib/dashboard-ead-contagion": {
+    "file_count": 3,
+    "files": [
+      "components\\DashboardContagion.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "CIF",
+      "Nama Nasabah",
+      "Fasilitas Pemicu (S2)",
+      "Nilai EAD Tertular (Rp)",
+      "EAD S2 Asli",
+      "Segmen"
+    ],
+    "interfaces": [
+      "ContagionSummaryData",
+      "ContagionDetailData",
+      "DashboardEADContagionData"
+    ]
+  },
+  "lib/dashboard-ecl-waterfall-attribution-chart": {
+    "file_count": 7,
+    "files": [
+      "component\\ECLWaterfallDashboard.tsx",
+      "component\\FooterSection.tsx",
+      "component\\HeaderSection.tsx",
+      "component\\MicroDrillDownCard.tsx",
+      "component\\WaterfallChartCard.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [],
+    "interfaces": [
+      "Props",
+      "FooterProps",
+      "HeaderProps",
+      "Props",
+      "Props",
+      "WaterfallSummaryQueryData",
+      "SampleFacilityDetail",
+      "WaterfallDashboardResponse"
+    ]
+  },
+  "lib/dashboard-pemicu-sicr-sektor-riil": {
+    "file_count": 3,
+    "files": [
+      "component\\PemicuSicrSektorRiilView.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "NO REKENING (AKAD)",
+      "SIFAT KREDIT",
+      "YIELD_DROP {'>'} 30%",
+      "DEVIASI_FISIK {'>'} 15%",
+      "TA'ADDI (KELALAIAN)",
+      "TAQSIR (PELANGGARAN)",
+      "No. Fasilitas",
+      "Akad",
+      "DPD",
+      "Yield Drop",
+      "Deviasi Fisik",
+      "Ta'addi/Taqsir",
+      "Stage Awal",
+      "Stage Akhir",
+      "Sifat Kredit",
+      "Alasan Pemicu SICR"
+    ],
+    "interfaces": [
+      "SektorRiilData",
+      "JenisAkadData",
+      "SektorRiilMetrics",
+      "ThemeConfig",
+      "DashboardSektorRiilResponse"
+    ]
+  },
+  "lib/dashboard-transisi-migrasi": {
+    "file_count": 4,
+    "files": [
+      "component\\DashboardUI.tsx",
+      "component\\Header.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "Nomor Rekening",
+      "Segment",
+      "Deskripsi Proyek / Usaha",
+      "STAGE {prevMonthLabel}",
+      "STAGE {currMonthLabel}",
+      "Pemicu Utama Migrasi SICR",
+      "Total EAD"
+    ],
+    "interfaces": [
+      "SummaryData",
+      "TriggerData",
+      "TrendData",
+      "WatchlistData",
+      "QuarterlyRateData",
+      "DashboardData"
+    ]
+  },
+  "lib/dashboard-uji-asumsi-klasik": {
+    "file_count": 3,
+    "files": [
+      "component\\DashboardUjiAsumsiKlasikView.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "Segmen",
+      "Bucket Awal",
+      "R-Square",
+      "Durbin-Watson",
+      "VIF Max",
+      "Status Model",
+      "Aksi"
+    ],
+    "interfaces": [
+      "DashboardUjiAsumsiData",
+      "DashboardUjiAsumsiResponse"
+    ]
+  },
+  "lib/dashboard-uji-statistik-regresi": {
+    "file_count": 3,
+    "files": [
+      "component\\UjiStatistikRegresiView.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "Segmen",
+      "Model Makroekonomi",
+      "R-Square",
+      "Durbin-Watson",
+      "Heteroskedastisitas (White)",
+      "Aksi",
+      "No",
+      "Kode Makro",
+      "Nama Variabel"
+    ],
+    "interfaces": [
+      "UjiStatistikData",
+      "SegmentData",
+      "ThemeColors",
+      "DashboardUjiStatistikResponse",
+      "MacroData"
+    ]
+  },
+  "lib/dashboard-unsecure-floor-Compliance-LGD": {
+    "file_count": 4,
+    "files": [
+      "component\\DashboardUI.tsx",
+      "component\\Header.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "CIF",
+      "Deskripsi Rekening",
+      "EAD (Baki Debet)",
+      "Unsecured",
+      "Raw LGD",
+      "Final LGD",
+      "Status Koreksi"
+    ],
+    "interfaces": [
+      "HeaderProps",
+      "KPIData",
+      "MitigasiData",
+      "WatchlistCompliance",
+      "BarData",
+      "DashboardComplianceData"
+    ]
+  },
+  "lib/dashboard-zmacro-projection": {
+    "file_count": 3,
+    "files": [
+      "component\\DashboardZMacroProjectionView.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "Segmen",
+      "Bucket T0",
+      "Periode Proyeksi",
+      "Std. Error",
+      "OPTIMIS",
+      "MODERAT",
+      "PESIMIS"
+    ],
+    "interfaces": [
+      "ZMacroProjectionData",
+      "ZMacroProjectionResponse"
+    ]
+  },
+  "lib/penentuan-CKPN": {
+    "file_count": 9,
+    "files": [
+      "component\\AccountingJournal.tsx",
+      "component\\ControlFilter.tsx",
+      "component\\HeaderReport.tsx",
+      "component\\MakroShocksCard.tsx",
+      "component\\SummaryCards.tsx",
+      "component\\TableReport.tsx",
+      "hook\\usePenentuanCKPN.ts",
+      "services\\index.ts",
+      "type\\index.ts"
+    ],
+    "headers": [
+      "SEGMENT PORTFOLIO",
+      "TOTAL EAD (RP)",
+      "CKPN BASELINE (RP)",
+      "CKPN FINAL SIMULASI (RP)",
+      "VARIANS (RP)"
+    ],
+    "interfaces": [
+      "ControlFilterProps",
+      "HeaderReportProps",
+      "SegmentOption",
+      "CKPNSegmentDetail",
+      "CKPNSimulationResponse"
+    ]
+  },
+  "lib/report-Laporan Uji-Valuasi-KualitasAppraisal": {
+    "file_count": 6,
+    "files": [
+      "component\\FilterBar.tsx",
+      "component\\ReportDocument.tsx",
+      "component\\ReportHeader.tsx",
+      "component\\ValuasiKualitasAppraisalView.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "Kategori Umur Appraisal",
+      "Jumlah Agunan",
+      "Total Market Value (MV)",
+      "Total Liquidation Value (LV) Awal",
+      "Eligible LV Setelah Penalti"
+    ],
+    "interfaces": [
+      "FilterBarProps",
+      "ReportDocumentProps",
+      "ReportHeaderProps",
+      "RingkasanPortofolio",
+      "StratifikasiItem",
+      "ValuasiKualitasAppraisalResponse"
+    ]
+  },
+  "lib/report-agregasi-lgd-stage2": {
+    "file_count": 4,
+    "files": [
+      "component\\ReportAgregasiLGDStage2View.tsx",
+      "component\\WaveBackground.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "Pemicu SICR",
+      "Jml Fasilitas",
+      "Total EAD Default (Rp)",
+      "Total NPV Pulih (Rp)",
+      "Rata2 LGD Mentah",
+      "Rata2 LGD Final",
+      "Terkena Floor"
+    ],
+    "interfaces": [
+      "Props",
+      "AgregasiLGDStage2Row",
+      "ThemeColors",
+      "ReportAgregasiLGDStage2Response"
+    ]
+  },
+  "lib/report-alokasi-agunan": {
+    "file_count": 5,
+    "files": [
+      "component\\Footer.tsx",
+      "component\\Header.tsx",
+      "component\\ReportAlokasi.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "No Rekening",
+      "Jenis Akad",
+      "EAD Outstanding",
+      "Bobot",
+      "Alokasi NRV Diakui"
+    ],
+    "interfaces": [
+      "FooterProps",
+      "HeaderProps",
+      "AlokasiSummary",
+      "AlokasiDetail",
+      "AlokasiReportResponse"
+    ]
+  },
+  "lib/report-ecl-waterfall-attribution-chart": {
+    "file_count": 3,
+    "files": [
+      "component\\ReportWaterfall.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [],
+    "interfaces": [
+      "WaterfallSummaryQueryData",
+      "SampleFacilityDetail",
+      "WaterfallReportResponse"
+    ]
+  },
+  "lib/report-evaluasi-sicr-off-balance": {
+    "file_count": 6,
+    "files": [
+      "component\\Filters.tsx",
+      "component\\ReportEvaluasiSicrOffBalanceView.tsx",
+      "component\\ReportTable.tsx",
+      "component\\WaveBackground.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "NO REKENING",
+      "SISA PLAFON (RP)",
+      "CCF RATE",
+      "INDIKATOR SICR",
+      "OFF-BAL EAD (RP)"
+    ],
+    "interfaces": [
+      "FiltersProps",
+      "Props",
+      "ReportTableProps",
+      "EvaluasiSicrOffBalanceRow",
+      "ThemeColors",
+      "ReportEvaluasiSicrOffBalanceResponse"
+    ]
+  },
+  "lib/report-kalkulasi-LGD-CollBase": {
+    "file_count": 5,
+    "files": [
+      "component\\FilterDate.tsx",
+      "component\\Header.tsx",
+      "component\\ReportKalkulasi.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [],
+    "interfaces": [
+      "AgregasiLGD",
+      "SampelUjiPetik",
+      "ReportKalkulasiResponse"
+    ]
+  },
+  "lib/report-kertas-kerja-konsolidasi-ultimate-ead": {
+    "file_count": 6,
+    "files": [
+      "component\\Filters.tsx",
+      "component\\ReportKertasKerjaKonsolidasiUltimateEadView.tsx",
+      "component\\ReportTable.tsx",
+      "component\\WaveBackground.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "NO REKENING",
+      "ON-BAL EAD (RP)",
+      "OFF-BAL EAD (RP)",
+      "STG ON",
+      "STG OFF",
+      "STG FINAL",
+      "ULTIMATE EAD (RP)"
+    ],
+    "interfaces": [
+      "FiltersProps",
+      "Props",
+      "ReportTableProps",
+      "KertasKerjaKonsolidasiUltimateEadRow",
+      "ThemeColors",
+      "ReportKertasKerjaKonsolidasiUltimateEadResponse"
+    ]
+  },
+  "lib/report-laporan-penerapan-haircut": {
+    "file_count": 6,
+    "files": [
+      "component\\ContentCard.tsx",
+      "component\\FilterCard.tsx",
+      "component\\Footer.tsx",
+      "component\\Header.tsx",
+      "component\\MetadataCard.tsx",
+      "services\\index.ts"
+    ],
+    "headers": [
+      "Jenis Agunan",
+      "Vol",
+      "Haircut",
+      "Eligible LV (Gross)",
+      "Potongan Biaya",
+      "Net Realizable (NRV)"
+    ],
+    "interfaces": [
+      "ContentCardProps",
+      "FilterCardProps",
+      "HeaderProps",
+      "MetadataCardProps"
+    ]
+  },
+  "lib/report-mutasi-arus-kas-pemulihan": {
+    "file_count": 6,
+    "files": [
+      "component\\Filters.tsx",
+      "component\\ReportMutasiArusKasView.tsx",
+      "component\\ReportTable.tsx",
+      "component\\WaveBackground.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "NO REKENING",
+      "TGL DEFAULT",
+      "SUMBER KAS",
+      "NOMINAL KOTOR",
+      "HAIRCUT",
+      "TTR",
+      "EPR",
+      "NPV BERSIH"
+    ],
+    "interfaces": [
+      "FiltersProps",
+      "Props",
+      "ReportTableProps",
+      "MutasiArusKasRow",
+      "ThemeColors",
+      "ReportMutasiArusKasResponse"
+    ]
+  },
+  "lib/report-outcome-tagging": {
+    "file_count": 3,
+    "files": [
+      "component\\OutcomeTaggingView.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "KODE STATUS",
+      "DESKRIPSI STATUS",
+      "JUMLAH REKENING",
+      "PERSENTASE (%)",
+      "NO",
+      "PENYEBAB TERBERAT (TRIGGER REASON)"
+    ],
+    "interfaces": [
+      "OutcomeTaggingReportData"
+    ]
+  },
+  "lib/report-pemicu-sicr-kualitatif": {
+    "file_count": 3,
+    "files": [
+      "component\\PemicuSicrView.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "No. Fasilitas",
+      "Akad",
+      "DPD",
+      "Yield Drop",
+      "Deviasi Fisik",
+      "Ta'addi/Taqsir",
+      "Stage Awal",
+      "Stage Akhir",
+      "Sifat Kredit",
+      "Alasan Pemicu SICR"
+    ],
+    "interfaces": [
+      "PemicuSicrData",
+      "PemicuSicrReportResponse"
+    ]
+  },
+  "lib/report-pengujian-kepatuhan-syariah": {
+    "file_count": 5,
+    "files": [
+      "component\\FilterDate.tsx",
+      "component\\Header.tsx",
+      "component\\ReportKepatuhan.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "Jenis Akad",
+      "Vol Fasilitas",
+      "Total EAD",
+      "Total PV Recovery",
+      "Rata-Rata LGD %"
+    ],
+    "interfaces": [
+      "HeaderProps",
+      "AgregasiLGD",
+      "SampelKalkulasi",
+      "ReportKepatuhanResponse"
+    ]
+  },
+  "lib/report-proyeksi-z-macro": {
+    "file_count": 3,
+    "files": [
+      "component\\ProyeksiZMacroView.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "Kualitas Pembiayaan (Hari Tunggakan)",
+      "Periode Proyeksi",
+      "Standard Error (SE)",
+      "Z-Macro Optimis",
+      "Z-Macro Moderat",
+      "Z-Macro Pesimis"
+    ],
+    "interfaces": [
+      "ProyeksiZMacroViewProps",
+      "ProyeksiZMacroData",
+      "ProyeksiZMacroResponse"
+    ]
+  },
+  "lib/report-uji-asumsi-klasik": {
+    "file_count": 4,
+    "files": [
+      "component\\DetailModal.tsx",
+      "component\\UjiAsumsiKlasikView.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "Segmen Portofolio",
+      "Kolektibilitas Pembiayaan",
+      "R-Square",
+      "Durbin-Watson",
+      "Status Model",
+      "Aksi"
+    ],
+    "interfaces": [
+      "DetailModalProps",
+      "UjiAsumsiKlasikViewProps",
+      "UjiAsumsiKlasikData",
+      "UjiAsumsiKlasikResponse"
+    ]
+  },
+  "lib/report-uji-statistik-regresi": {
+    "file_count": 3,
+    "files": [
+      "component\\UjiStatistikView.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "Segmen",
+      "Model Makroekonomi",
+      "R-Square",
+      "Durbin-Watson",
+      "Heteroskedastisitas (White)"
+    ],
+    "interfaces": [
+      "UjiStatistikData",
+      "SegmentData",
+      "UjiStatistikReportResponse"
+    ]
+  },
+  "lib/report-validasi-komputasi-grand-formula-ecl": {
+    "file_count": 5,
+    "files": [
+      "component\\Filters.tsx",
+      "component\\ReportTable.tsx",
+      "component\\WaveBackground.tsx",
+      "services\\index.ts",
+      "types\\index.ts"
+    ],
+    "headers": [
+      "No Rekening",
+      "Stage",
+      "Final PD",
+      "LGD Sec",
+      "LGD Unsec",
+      "ECL Secured",
+      "ECL Unsecured",
+      "Total ECL Statistik"
+    ],
+    "interfaces": [
+      "FiltersProps",
+      "ReportTableProps",
+      "ValidasiKomputasiRow",
+      "ValidasiKomputasiResponse"
+    ]
+  },
+  "report": {
+    "file_count": 60,
+    "files": [
+      "dbService.ts",
+      "component\\audit-sensitivitas-makroekonomi-report\\AuditSensitivitasMakroekonomiClient.tsx",
+      "component\\DefinisiAuditTrailFasilitas-Asal-Usul-Anomali\\ButtonDefinisiAuditTrailFasilitasAsalUsulAnomali.tsx",
+      "component\\DefinisiAuditTrailFasilitas-Asal-Usul-Anomali\\DefinisiAuditTrailFasilitasAsalUsulAnomali.tsx",
+      "component\\ead-revolving-dashboard\\EADRevolvingClient.tsx",
+      "component\\jurnal-ckpn-dashboard\\JurnalCKPNClient.tsx",
+      "component\\Laporan-Matriks-Konversi-TTC-ke-PIT-PD-service\\ButtonLaporanMatriksKonversi.tsx",
+      "component\\Laporan-Matriks-Konversi-TTC-ke-PIT-PD-service\\LaporanMatriksKonversi.tsx",
+      "component\\laporan-proyeksiamortasi\\AmortisasiExportButton.tsx",
+      "component\\laporan-proyeksiamortasi\\DetailAmortisasiTable.tsx",
+      "component\\laporan-proyeksiamortasi\\NorekFilterForm.tsx",
+      "component\\laporan-proyeksiamortasi\\PeriodeFilterForm.tsx",
+      "component\\laporan-proyeksiamortasi\\SummaryAmortisasiTable.tsx",
+      "component\\lgd-kolektif-dashboard\\LGDKolektifClient.tsx",
+      "component\\Simulasi-dampak-finansial\\ButtonSimulasiDampakFinansial.tsx",
+      "component\\Simulasi-dampak-finansial\\DiagramWaveBackground.tsx",
+      "component\\Simulasi-dampak-finansial\\SimulasiDampakFinansial.tsx",
+      "component\\summary-dashboard\\AtmrEfficiency.tsx",
+      "component\\summary-dashboard\\CapitalAtmrImpact.tsx",
+      "component\\summary-dashboard\\CarRatioGauge.tsx",
+      "component\\summary-dashboard\\CarTrendChart.tsx",
+      "component\\summary-dashboard\\EclChargePie.tsx",
+      "component\\summary-dashboard\\GenericGauge.tsx",
+      "component\\summary-dashboard\\LcrGauge.tsx",
+      "component\\summary-dashboard\\NfsrGauge.tsx",
+      "component\\summary-dashboard\\PsakEclChart.tsx",
+      "component\\summary-dashboard\\SummaryDashboardClient.tsx",
+      "services\\audit-sensitivitas-makroekonomi-report\\dashboardAuditSensitivitas.service.ts",
+      "services\\DefinisiAuditTrailFasilitas-Asal-Usul-Anomali\\DefinisiAuditTrailFasilitasAsalUsulAnomali.service.ts",
+      "services\\ead-revolving-report\\dashboardEADRevolving.service.ts",
+      "services\\ead-revolving-report\\dashboardEADRevolvingDetail.service.ts",
+      "services\\jurnal-ckpn-dashboard\\dashboardJurnalCKPN.service.ts",
+      "services\\jurnal-ckpn-report\\dashboardJurnalCKPN.service.ts",
+      "services\\jurnal-ckpn-report\\dashboardJurnalCKPNDetail.service.ts",
+      "services\\Laporan-Matriks-Konversi-TTC-ke-PIT-PD-service\\LaporanMatriksKonversiTTCkePITPD.service.ts",
+      "services\\laporan-proyeksiamortasi-service\\laporan-proyeksimortasi.service.ts",
+      "services\\lgd-kolektif-report\\dashboardLGDDetailFacility.service.ts",
+      "services\\lgd-kolektif-report\\dashboardLGDParameterSummary.service.ts",
+      "services\\Query\\bankNameQuery.service.ts",
+      "services\\Query\\audit-sensitivitas-makroekonomi-report\\auditSensitivitasQuery.service.ts",
+      "services\\Query\\DefinisiAuditTrailFasilitas-Asal-Usul-Anomali\\DefinisiAuditTrailFasilitasAsalUsulAnomali.query.ts",
+      "services\\Query\\ead-revolving-report\\eadMetodeQuery.service.ts",
+      "services\\Query\\ead-revolving-report\\eadRevolvingDetailQuery.service.ts",
+      "services\\Query\\ead-revolving-report\\eadRevolvingQuery.service.ts",
+      "services\\Query\\ead-revolving-report\\eadSegmentQuery.service.ts",
+      "services\\Query\\jurnal-ckpn-report\\jurnalCKPNDetailQuery.service.ts",
+      "services\\Query\\jurnal-ckpn-report\\jurnalCKPNQuery.service.ts",
+      "services\\Query\\jurnal-ckpn-report\\jurnalCOAMappingQuery.service.ts",
+      "services\\Query\\jurnal-ckpn-report\\jurnalSegmentQuery.service.ts",
+      "services\\Query\\jurnal-ckpn-report\\jurnalValutaQuery.service.ts",
+      "services\\Query\\Laporan-Matriks-Konversi-TTC-ke-PIT-PD\\LaporanMatriksKonversiTTCkePITPD.query.ts",
+      "services\\Query\\laporan-proyeksiamortasi\\laporan-proyeksiamortasi.query.ts",
+      "services\\Query\\lgd-kolektif-dashboard\\paramVintagePenaltyQuery.service.ts",
+      "services\\Query\\lgd-kolektif-report\\lgdKolektifDetailQuery.service.ts",
+      "services\\Query\\lgd-kolektif-report\\lgdKolektifQuery.service.ts",
+      "services\\Query\\lgd-kolektif-report\\lgdMetodeQuery.service.ts",
+      "services\\Query\\lgd-kolektif-report\\lgdSegmentQuery.service.ts",
+      "services\\Query\\lgd-kolektif-report\\paramVintagePenaltyQuery.service.ts",
+      "services\\Query\\Simulasi-dampak-finansial\\SimulasiDampakFinansial.query.ts",
+      "services\\Simulasi-dampak-finansial\\SimulasiDampakFinansial.service.ts"
+    ],
+    "headers": [
+      "MODEL ID",
+      "VARIABEL MAKROEKONOMI",
+      "KATEGORI SEKTOR",
+      "KOEFISIEN",
+      "P-VALUE",
+      "TINGKAT DIFERENSIASI",
+      "PERIODE LAG",
+      "SIGNIFIKAN",
+      "STATUS ENGINE FLI",
+      "Segmen",
+      "No. Fasilitas",
+      "Akad",
+      "Stage",
+      "Tipe Agunan",
+      "Nilai Pasar (A)",
+      "Total Haircut",
+      "NRV (B)",
+      "EAD Netto (C)",
+      "Surplus (B-C)",
+      "Akar Penyebab (Root Cause)",
+      "SEGMEN PORTOFOLIO",
+      "TOTAL REKENING",
+      "TOTAL PLAFON (LIMIT)",
+      "TOTAL BAKI DEBET (ON-BAL)",
+      "TOTAL SISA PLAFON (UNDRAWN)",
+      "AVG. CCF HISTORIS (%)",
+      "TOTAL EAD OFF-BALANCE",
+      "TOTAL EAD FINAL",
+      "NO. FASILITAS",
+      "CIF",
+      "NAMA NASABAH",
+      "PLAFON (LIMIT)",
+      "BAKI DEBET (ON-BAL)",
+      "SISA PLAFON (UNDRAWN)",
+      "CCF HISTORIS (%)",
+      "EAD OFF-BALANCE",
+      "EAD TOTAL",
+      "Segmen Portofolio \\ Indikator",
+      "Target ECL Bulan Ini (A)",
+      "Saldo CKPN Bulan Lalu (B)",
+      "Delta (Neto A - B)",
+      "Aksi Akuntansi (Instruction)",
+      "COA Debet",
+      "Deskripsi",
+      "COA Kredit",
+      "CIF / No_Fas",
+      "EAD Netto (Nominal)",
+      "PD PIT (%)",
+      "LGD Nom (%)",
+      "Delta (A-B) (Nominal)",
+      "FINAL WEIGHT PIT PD (%)",
+      "SEGMENT ID",
+      "TTC PD BASE (%)",
+      "BASELINE (BOBOT: {group.bobotNormal}%)",
+      "OPTIMISTIC (BOBOT: {group.bobotBest}%)",
+      "PESSIMISTIC (BOBOT: {group.bobotWorst}%)",
+      "SCALAR",
+      "PIT PD (%)",
+      "Bulan Ke- (Future)",
+      "Tanggal Proyeksi (Est.)",
+      "Sisa Tenor (Bulan)",
+      "Angsuran Pokok",
+      "Est. Marjin / Ujrah",
+      "Proyeksi EAD (Pokok Netto)",
+      "Stage \\ Posisi",
+      "T-0 (Aktual)",
+      "T+3 Bulan",
+      "T+6 Bulan",
+      "T+9 Bulan",
+      "T+12 Bulan",
+      "NAMA SEGMEN",
+      "AVG. BASE HAIRCUT",
+      "AVG. VINTAGE PENALTY",
+      "AVG. BIAYA Eksekusi",
+      "LGD FLOOR SET",
+      "NOMOR REKENING",
+      "STAGE",
+      "NOMINAL EAD (PURIFIED)",
+      "NILAI FISIK (APPRAISAL)",
+      "TOTAL HAIRCUT (H+VP)",
+      "AGUNAN DIAKUI",
+      "NOMINAL NET CASH",
+      "UNSECURED EAD (NOMINAL)",
+      "LGD RATE",
+      "AKAD",
+      "DPD",
+      "BUCKET DPD",
+      "BUCKET SICR",
+      "EAD (EXPOSURE)",
+      "STAGE AS-IS",
+      "STAGE TO-BE",
+      "ECL AS-IS (DPD ONLY)",
+      "ECL TO-BE (PSAK413)",
+      "SELISIH ECL (UNDER-PROVISIONING)",
+      "Indicator",
+      "Target",
+      "ECL Impact"
+    ],
+    "interfaces": [
+      "AuditSensitivitasMakroekonomiClientProps",
+      "Props",
+      "Props",
+      "EADRevolvingClientProps",
+      "JurnalCKPNClientProps",
+      "Props",
+      "MatriksKonversiRow",
+      "GroupedData",
+      "Props",
+      "Props",
+      "Props",
+      "LGDKolektifClientProps",
+      "Props",
+      "Props",
+      "Props",
+      "Props",
+      "FinancialIndicator",
+      "MacroSensitivityRow",
+      "AuditSensitivitasSummary",
+      "AuditTrailItem",
+      "EADRevolvingRow",
+      "EADRevolvingSummary",
+      "EADRevolvingDetailRow",
+      "EADRevolvingDetailSummary",
+      "JurnalCKPNRow",
+      "COAMappingRow",
+      "JurnalCKPNDetailRow",
+      "JurnalCKPNDetailSummary",
+      "JurnalCKPNDashboardData",
+      "JurnalCKPNRow",
+      "COAMappingRow",
+      "JurnalCKPNDetailRow",
+      "JurnalCKPNDetailSummary",
+      "JurnalCKPNDashboardData",
+      "JurnalCKPNDetailRow",
+      "JurnalCKPNDetailSummary",
+      "AmortisasiParams",
+      "LGDDetailFacilityRow",
+      "LGDDetailFacilitySummary",
+      "LGDParameterSummaryRow",
+      "LGDParameterSummaryData",
+      "AuditSensitivitasQueryResult",
+      "EADMethodOption",
+      "EADReportParameters",
+      "EADRevolvingDetailQueryResult",
+      "EADSegmentOption",
+      "JurnalSegmentOption",
+      "ValutaOption",
+      "JurnalReportParameters",
+      "LGDDetailFacilityQueryResult",
+      "LGDMethodOption",
+      "LGDReportParameters",
+      "SegmentOption",
+      "SimulasiDampakFinansialData",
+      "GetSimulasiDampakFinansialParams",
+      "FetchSimulasiDampakFinansialParams"
+    ]
+  }
+}

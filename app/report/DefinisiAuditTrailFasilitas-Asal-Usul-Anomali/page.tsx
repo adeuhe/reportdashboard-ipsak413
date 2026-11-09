@@ -12,8 +12,9 @@ interface PageProps {
 export default async function DefinisiAuditTrailFasilitasAsalUsulAnomaliPage({ searchParams }: PageProps) {
   const resolvedParams = await searchParams;
   const segment = typeof resolvedParams?.segment === "string" ? resolvedParams.segment : "ALL";
+  const akad = typeof resolvedParams?.akad === "string" ? resolvedParams.akad : "ALL";
 
-  const reportData = await getDefinisiAuditTrailFasilitasAsalUsulAnomaliService(segment);
+  const reportData = await getDefinisiAuditTrailFasilitasAsalUsulAnomaliService(segment, akad);
 
   return (
     <main className="min-h-screen bg-white">

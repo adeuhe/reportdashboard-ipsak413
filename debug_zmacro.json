@@ -1,0 +1,61 @@
+{
+  "query": "\n        WITH GroupedData AS (\n            SELECT \n                ISNULL(b.name, 'Unknown') AS [Segmen],\n                f.bucket_awal AS [Bucket T0],\n                f.periode_proyeksi AS [Periode Proyeksi],\n                CAST(f.standard_error AS DECIMAL(10,6)) AS [Standard Error (SE)],\n                MAX(CASE WHEN f.skenario = 'OPTIMIS' THEN CAST(f.z_macro_value AS DECIMAL(10,6)) END) AS [Z-Macro Optimis],\n                MAX(CASE WHEN f.skenario = 'MODERAT' THEN CAST(f.z_macro_value AS DECIMAL(10,6)) END) AS [Z-Macro Moderat],\n                MAX(CASE WHEN f.skenario = 'PESIMIS' THEN CAST(f.z_macro_value AS DECIMAL(10,6)) END) AS [Z-Macro Pesimis]\n            FROM [ipsak413_mid]..fact_zmacro_projection f WITH (NOLOCK)\n            LEFT JOIN [ipsak71]..segment b WITH (NOLOCK) \n              ON f.id_klaster_pd = b.id AND b.KodeForm = 'PD'\n            WHERE CONVERT(VARCHAR(10), f.periode_proyeksi, 120) BETWEEN @StartDate AND @EndDate\n      \n            GROUP BY b.name, f.bucket_awal, f.periode_proyeksi, f.standard_error\n        )\n        SELECT *, COUNT(*) OVER() as total_rows\n        FROM GroupedData\n        ORDER BY [Segmen], [Bucket T0]\n        OFFSET @Offset ROWS FETCH NEXT @Limit ROWS ONLY;\n      ",
+  "params": {
+    "targetStartDate": "2026-01-01",
+    "targetEndDate": "2027-09-30",
+    "offset": 0,
+    "limit": 5
+  },
+  "data": [
+    {
+      "Segmen": "Segment 1 - Corporate",
+      "Bucket T0": 1,
+      "Periode Proyeksi": "2027-09-08T00:00:00.000Z",
+      "Standard Error (SE)": 0.777718,
+      "Z-Macro Optimis": -1.113706,
+      "Z-Macro Moderat": -0.335988,
+      "Z-Macro Pesimis": 0.44173,
+      "total_rows": 16
+    },
+    {
+      "Segmen": "Segment 1 - Corporate",
+      "Bucket T0": 2,
+      "Periode Proyeksi": "2027-09-08T00:00:00.000Z",
+      "Standard Error (SE)": 0.758019,
+      "Z-Macro Optimis": -0.932335,
+      "Z-Macro Moderat": -0.174316,
+      "Z-Macro Pesimis": 0.583704,
+      "total_rows": 16
+    },
+    {
+      "Segmen": "Segment 1 - Corporate",
+      "Bucket T0": 3,
+      "Periode Proyeksi": "2027-09-08T00:00:00.000Z",
+      "Standard Error (SE)": 0.736216,
+      "Z-Macro Optimis": -0.95271,
+      "Z-Macro Moderat": -0.216494,
+      "Z-Macro Pesimis": 0.519721,
+      "total_rows": 16
+    },
+    {
+      "Segmen": "Segment 1 - Corporate",
+      "Bucket T0": 4,
+      "Periode Proyeksi": "2027-09-08T00:00:00.000Z",
+      "Standard Error (SE)": 0.733476,
+      "Z-Macro Optimis": -0.954669,
+      "Z-Macro Moderat": -0.221193,
+      "Z-Macro Pesimis": 0.512283,
+      "total_rows": 16
+    },
+    {
+      "Segmen": "Segment 2 - UMKM",
+      "Bucket T0": 1,
+      "Periode Proyeksi": "2027-09-08T00:00:00.000Z",
+      "Standard Error (SE)": 0.623402,
+      "Z-Macro Optimis": -0.252132,
+      "Z-Macro Moderat": 0.37127,
+      "Z-Macro Pesimis": 0.994673,
+      "total_rows": 16
+    }
+  ]
+}

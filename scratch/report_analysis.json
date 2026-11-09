@@ -1,0 +1,3186 @@
+{
+  "dashboard-ead-contagion": {
+    "type": "NEW (lib)",
+    "files": [
+      "DashboardContagion.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "ContagionSummaryData",
+        "fields": [
+          "Ultimate_EAD: number;",
+          "Margin_Dibuang: number;",
+          "waight_of_balance: number;",
+          "porto_stage1: number;",
+          "porto_stage2: number;",
+          "total_contagion?: number;",
+          "total_ead_s2_asli?: number;",
+          "total_ead_s2_final?: number;"
+        ]
+      },
+      {
+        "name": "ContagionDetailData",
+        "fields": [
+          "Tanggal_Laporan: string;",
+          "CIF: string;",
+          "Nama_Debitur: string;",
+          "EAD_S2_ASLI: number;",
+          "EAD_S1_TERTULAR: number;",
+          "EAD_S2_FINAL: number;",
+          "ALASAN_TRIGER_SICR: string;",
+          "Stage1_Asli: number;",
+          "Contagion: number;",
+          "Stage1_Final: number;",
+          "Stage2_Asli: number;",
+          "Stage2_HasilContagion: number;",
+          "Stage2_Final: number;",
+          "MigrationRate: number;",
+          "Segment: string;"
+        ]
+      },
+      {
+        "name": "DashboardEADContagionData",
+        "fields": [
+          "theme?: any;",
+          "namaBank: string;",
+          "summary: ContagionSummaryData | null;",
+          "detail: ContagionDetailData[];",
+          "availableDates: string[];",
+          "availableSegments: { id: string; name: string"
+        ]
+      }
+    ],
+    "table_headers": [
+      "CIF",
+      "Nama Nasabah",
+      "Fasilitas Pemicu (S2)",
+      "Nilai EAD Tertular (Rp)",
+      "EAD S2 Asli",
+      "Segmen"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "DATED",
+      "Date",
+      "Dates",
+      "Filter",
+      "Page",
+      "Pages",
+      "STAGE",
+      "SearchParams",
+      "Segment",
+      "SegmentFilter",
+      "Segment_ID",
+      "Segmentasi",
+      "Segments",
+      "Stage",
+      "Stage1_Asli",
+      "Stage1_Final",
+      "Stage2_Asli",
+      "Stage2_Final",
+      "Stage2_HasilContagion",
+      "bank",
+      "bankRes",
+      "filter",
+      "filterBtnBg",
+      "searchParams",
+      "segment",
+      "segmentFilter",
+      "segments",
+      "stage1",
+      "stage1Asli",
+      "stage1Final",
+      "stage2",
+      "stage_final"
+    ]
+  },
+  "dashboard-ecl-waterfall-attribution-chart": {
+    "type": "NEW (lib)",
+    "files": [
+      "ECLWaterfallDashboard.tsx",
+      "FooterSection.tsx",
+      "HeaderSection.tsx",
+      "MicroDrillDownCard.tsx",
+      "WaterfallChartCard.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "Props",
+        "fields": [
+          "data: WaterfallDashboardResponse;"
+        ]
+      },
+      {
+        "name": "FooterProps",
+        "fields": [
+          "wormSignature: string;"
+        ]
+      },
+      {
+        "name": "HeaderProps",
+        "fields": [
+          "theme?: any;",
+          "namaBank: string;",
+          "dataPosition: string;"
+        ]
+      },
+      {
+        "name": "Props",
+        "fields": [
+          "sampleFacility: SampleFacilityDetail;",
+          "executiveNote: string;",
+          "dataPosition?: string;",
+          "theme?: any;"
+        ]
+      },
+      {
+        "name": "Props",
+        "fields": [
+          "summary: WaterfallSummaryQueryData;",
+          "theme?: any;"
+        ]
+      },
+      {
+        "name": "WaterfallSummaryQueryData",
+        "fields": [
+          "total_ultimate_ead: number;",
+          "safe_zone_pd: number;",
+          "exposure_at_risk: number;",
+          "collateral_recovery_lgd: number;",
+          "final_ckpn_ecl: number;",
+          "data_position: string;"
+        ]
+      },
+      {
+        "name": "SampleFacilityDetail",
+        "fields": [
+          "facility_id: string;",
+          "facility_name: string;",
+          "sektor_ekonomi: string;",
+          "staging_psak: string;",
+          "pd_percent: number;",
+          "lgd_percent: number;",
+          "ultimate_ead: number;",
+          "pd_reduction: number;",
+          "exposure_at_risk: number;",
+          "collateral_recovery: number;",
+          "final_ckpn: number;"
+        ]
+      },
+      {
+        "name": "WaterfallDashboardResponse",
+        "fields": [
+          "theme?: any;",
+          "namaBank: string;",
+          "dataPosition: string;",
+          "summary: WaterfallSummaryQueryData;",
+          "sampleFacility: SampleFacilityDetail;",
+          "executiveNote: string;",
+          "wormSignature: string;"
+        ]
+      }
+    ],
+    "table_headers": [],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "Date",
+      "DateToYYYYMMDD",
+      "Search",
+      "SearchParams",
+      "Stage",
+      "bankResult",
+      "date",
+      "dateParam",
+      "dateStr",
+      "search",
+      "searchParams",
+      "segment",
+      "stage_psak",
+      "tgl_proses"
+    ]
+  },
+  "dashboard-pemicu-sicr-sektor-riil": {
+    "type": "NEW (lib)",
+    "files": [
+      "PemicuSicrSektorRiilView.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "SektorRiilData",
+        "fields": [
+          "no_rekening: string;",
+          "akad_syariah: string;",
+          "akad_syariah_code?: string;",
+          "dpd: number;",
+          "yield_drop_pct: number;",
+          "deviasi_fisik_pct: number;",
+          "is_taaddi_taqsir: string | number;",
+          "stage_awal: number;",
+          "stage_akhir: number;",
+          "sifat_kredit: string;",
+          "alasan_pemicu: string;"
+        ]
+      },
+      {
+        "name": "JenisAkadData",
+        "fields": [
+          "SANDI: string;",
+          "KETERANGAN: string;"
+        ]
+      },
+      {
+        "name": "SektorRiilMetrics",
+        "fields": [
+          "totalFacilities: number;",
+          "averageYieldDrop: number;",
+          "averageDeviasiFisik: number;",
+          "taaddiTaqsirIncidents: number;",
+          "stage2MigrationRate: number;"
+        ]
+      },
+      {
+        "name": "ThemeConfig",
+        "fields": [
+          "color_bg_header: string;",
+          "color_text_primary: string;",
+          "color_text_muted: string;",
+          "color_btn_dwnld: string;",
+          "color_bg_box?: string;",
+          "color_border?: string;",
+          "color_accent?: string;",
+          "color_btn_fltr_reprt?: string;"
+        ]
+      },
+      {
+        "name": "DashboardSektorRiilResponse",
+        "fields": [
+          "namaBank: string;",
+          "tanggalLaporan: string;",
+          "availableDates: string[];",
+          "availableJenisAkad: JenisAkadData[];",
+          "data: SektorRiilData[];",
+          "metrics: SektorRiilMetrics;",
+          "theme: ThemeConfig;"
+        ]
+      }
+    ],
+    "table_headers": [
+      "NO REKENING (AKAD)",
+      "SIFAT KREDIT",
+      "YIELD_DROP {'>'} 30%",
+      "DEVIASI_FISIK {'>'} 15%",
+      "TA'ADDI (KELALAIAN)",
+      "TAQSIR (PELANGGARAN)",
+      "No. Fasilitas",
+      "Akad",
+      "DPD",
+      "Yield Drop",
+      "Deviasi Fisik",
+      "Ta'addi/Taqsir",
+      "Stage Awal",
+      "Stage Akhir",
+      "Sifat Kredit",
+      "Alasan Pemicu SICR"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "DATED",
+      "Date",
+      "DateString",
+      "Dates",
+      "Filter",
+      "FilterDate",
+      "FilterJenisAkad",
+      "Jenis",
+      "JenisAkad",
+      "JenisAkadCode",
+      "JenisAkadData",
+      "PAGE",
+      "PERIODE",
+      "Page",
+      "Pages",
+      "Periode",
+      "STAGE",
+      "Stage",
+      "bank",
+      "bankResult",
+      "date",
+      "dateParam",
+      "dates",
+      "datesResult",
+      "filter",
+      "filterDate",
+      "filterJenisAkad",
+      "jenis",
+      "jenisAkadCode",
+      "periode",
+      "periode_data",
+      "stage2MigrationRate",
+      "stage_akhir",
+      "stage_awal"
+    ]
+  },
+  "dashboard-transisi-migrasi": {
+    "type": "NEW (lib)",
+    "files": [
+      "DashboardUI.tsx",
+      "Header.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "SummaryData",
+        "fields": [
+          "Total_Portofolio_S1_S2: number;",
+          "Stage_1_Lancar: number;",
+          "Stage_2_Macet: number; // Renamed from Stage_2_Watchlist",
+          "New_Stage_2_Entrants: number;"
+        ]
+      },
+      {
+        "name": "TriggerData",
+        "fields": [
+          "Kategori_Pemicu: string;",
+          "Volume_Fasilitas: number;",
+          "Persentase: string;"
+        ]
+      },
+      {
+        "name": "TrendData",
+        "fields": [
+          "Bulan: string;",
+          "Volume_Migrasi_ke_S2: number;"
+        ]
+      },
+      {
+        "name": "WatchlistData",
+        "fields": [
+          "Nomor_Rekening: string;",
+          "Segment: string;",
+          "Deskripsi_Proyek_Usaha: string;",
+          "Stage_Prev: string;",
+          "Stage_Curr: string;",
+          "Pemicu_Utama_Migrasi_SICR: string;",
+          "Total_EAD: number;"
+        ]
+      },
+      {
+        "name": "QuarterlyRateData",
+        "fields": [
+          "Kuartal: string;",
+          "Migration_Rate: number;"
+        ]
+      },
+      {
+        "name": "DashboardData",
+        "fields": [
+          "theme?: any;",
+          "namaBank: string;",
+          "dataPosition: string;",
+          "bulanLalu: string;",
+          "availableDates: string[];",
+          "availableSegments: { id: string; name: string"
+        ]
+      }
+    ],
+    "table_headers": [
+      "Nomor Rekening",
+      "Segment",
+      "Deskripsi Proyek / Usaha",
+      "STAGE {prevMonthLabel}",
+      "STAGE {currMonthLabel}",
+      "Pemicu Utama Migrasi SICR",
+      "Total EAD"
+    ],
+    "parameters": [
+      "BANK",
+      "BULAN",
+      "Bank",
+      "Bulan",
+      "DATEADD",
+      "Date",
+      "DateChange",
+      "DateFilter",
+      "DateRaw",
+      "DateString",
+      "Dates",
+      "Filter",
+      "Page",
+      "SEGMENTS",
+      "STAGE",
+      "SearchParams",
+      "Segment",
+      "SegmentChange",
+      "SegmentFilter",
+      "Segments",
+      "Stage",
+      "Stage_1_Lancar",
+      "Stage_2_Entrants",
+      "Stage_2_Macet",
+      "Stage_2_Watchlist",
+      "Stage_Curr",
+      "Stage_Prev",
+      "bank",
+      "bankRes",
+      "bulan",
+      "bulanLalu",
+      "date",
+      "dates",
+      "datesReq",
+      "datesRes",
+      "filter",
+      "searchParams",
+      "segment",
+      "segmentCondition",
+      "segmentFilter",
+      "segment_id",
+      "segment_name",
+      "segments",
+      "stage_curr",
+      "stage_prev",
+      "tahun"
+    ]
+  },
+  "dashboard-uji-asumsi-klasik": {
+    "type": "NEW (lib)",
+    "files": [
+      "DashboardUjiAsumsiKlasikView.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "DashboardUjiAsumsiData",
+        "fields": [
+          "segmen: string;",
+          "bucketAwal: string; // \"Bucket Awal\" will hold string like \"Lancar (0 Hari)\"",
+          "rSquare: number;",
+          "durbinWatson: number;",
+          "vifMax: number;",
+          "statusModel: string;",
+          "isModelValid: number;"
+        ]
+      },
+      {
+        "name": "DashboardUjiAsumsiResponse",
+        "fields": [
+          "namaBank: string;",
+          "dataPosition: string;",
+          "availableSegments: { id: string, name: string"
+        ]
+      }
+    ],
+    "table_headers": [
+      "Segmen",
+      "Bucket Awal",
+      "R-Square",
+      "Durbin-Watson",
+      "VIF Max",
+      "Status Model",
+      "Aksi"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "Date",
+      "DateResult",
+      "DateTimeFormat",
+      "Filter",
+      "FilterColor",
+      "Filters",
+      "Limit",
+      "LimitChange",
+      "Page",
+      "PageChange",
+      "Pages",
+      "SearchParams",
+      "Segment",
+      "SegmentId",
+      "Segments",
+      "bank",
+      "bankResult",
+      "date",
+      "filter",
+      "limit",
+      "page",
+      "periode",
+      "periode_model",
+      "segment",
+      "segmentId",
+      "segmentResult",
+      "segments"
+    ]
+  },
+  "dashboard-uji-statistik-regresi": {
+    "type": "NEW (lib)",
+    "files": [
+      "UjiStatistikRegresiView.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "UjiStatistikData",
+        "fields": [
+          "tgl_audit: string;",
+          "kode_segment: string;",
+          "macro_features: string;",
+          "r_square: number;",
+          "durbin_watson: number;",
+          "heteroskedastisitas_pval: number;",
+          "status_model: string;",
+          "Segment?: string;"
+        ]
+      },
+      {
+        "name": "SegmentData",
+        "fields": [
+          "id: string;",
+          "name: string;"
+        ]
+      },
+      {
+        "name": "ThemeColors",
+        "fields": [
+          "color_bg_header?: string;",
+          "color_text_primary?: string;",
+          "color_text_muted?: string;",
+          "color_btn_dwnld?: string;",
+          "color_bg_box?: string;",
+          "color_border?: string;",
+          "color_accent?: string;",
+          "color_btn_fltr_reprt?: string;"
+        ]
+      },
+      {
+        "name": "DashboardUjiStatistikResponse",
+        "fields": [
+          "data: UjiStatistikData[];",
+          "chartData?: UjiStatistikData[];",
+          "namaBank: string;",
+          "tanggalLaporan: string;",
+          "tanggalMulai: string;",
+          "tanggalSelesai: string;",
+          "availableSegments: SegmentData[];",
+          "availablePeriods?: string[];",
+          "availableMacros?: MacroData[];",
+          "theme: ThemeColors;",
+          "totalData?: number;",
+          "totalPages?: number;",
+          "currentPage?: number;"
+        ]
+      },
+      {
+        "name": "MacroData",
+        "fields": [
+          "kode: string;",
+          "nama: string;",
+          "satuan: string;"
+        ]
+      }
+    ],
+    "table_headers": [
+      "Segmen",
+      "Model Makroekonomi",
+      "R-Square",
+      "Durbin-Watson",
+      "Heteroskedastisitas (White)",
+      "Aksi",
+      "No",
+      "Kode Makro",
+      "Nama Variabel"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "Date",
+      "DateNow",
+      "DateTimeFormat",
+      "Filter",
+      "FilterSegment",
+      "FilterTanggalMulai",
+      "FilterTanggalSelesai",
+      "Limit",
+      "PAGE",
+      "PERIODE",
+      "Page",
+      "Pages",
+      "Periode",
+      "Segment",
+      "SegmentData",
+      "Segments",
+      "Stage",
+      "bankResult",
+      "date",
+      "dateNowStr",
+      "dateQuery",
+      "dateResult",
+      "dateStr",
+      "dates",
+      "filterSegment",
+      "filterTanggalMulai",
+      "filterTanggalSelesai",
+      "limit",
+      "page",
+      "periode",
+      "periode_mulai",
+      "periode_selesai",
+      "segment",
+      "segmentQuery",
+      "segmentStr",
+      "segments",
+      "segmentsList",
+      "tgl_audit"
+    ]
+  },
+  "dashboard-unsecure-floor-Compliance-LGD": {
+    "type": "NEW (lib)",
+    "files": [
+      "DashboardUI.tsx",
+      "Header.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "HeaderProps",
+        "fields": [
+          "theme?: any;",
+          "namaBank: string;",
+          "dataPosition: string;",
+          "availableDates: string[];",
+          "currentDate: string;",
+          "currentFokus?: string;"
+        ]
+      },
+      {
+        "name": "KPIData",
+        "fields": [
+          "KPI_Unsecured_Ratio_Pct: string;",
+          "KPI_Total_Unsecured_Nominal: number;",
+          "KPI_Total_Breach_Rekening: number;",
+          "KPI_Raw_LGD_Avg: string;",
+          "KPI_Final_LGD_Avg: string;"
+        ]
+      },
+      {
+        "name": "MitigasiData",
+        "fields": [
+          "Kategori_Mitigasi: string;",
+          "Volume_Fasilitas: number;",
+          "Total_EAD: number;",
+          "Porsi_Persentase: string;"
+        ]
+      },
+      {
+        "name": "WatchlistCompliance",
+        "fields": [
+          "CIF: string;",
+          "Deskripsi_Rekening: string;",
+          "EAD_Baki_Debet: number;",
+          "Porsi_Unsecured: string;",
+          "Raw_LGD_Awal: string;",
+          "Final_LGD_Koreksi: string;",
+          "Status_Koreksi: string;"
+        ]
+      },
+      {
+        "name": "BarData",
+        "fields": [
+          "Raw_Projected_LGD_Pct: number;",
+          "Final_Adjusted_LGD_Pct: number;",
+          "Batas_Floor_Regulator_Pct: number;"
+        ]
+      },
+      {
+        "name": "DashboardComplianceData",
+        "fields": [
+          "theme?: any;",
+          "namaBank: string;",
+          "dataPosition: string;",
+          "availableDates: string[];",
+          "kpi: KPIData;",
+          "mitigasi: MitigasiData[];",
+          "watchlist: WatchlistCompliance[];",
+          "barData: BarData;",
+          "wormSignature: string;"
+        ]
+      }
+    ],
+    "table_headers": [
+      "CIF",
+      "Deskripsi Rekening",
+      "EAD (Baki Debet)",
+      "Unsecured",
+      "Raw LGD",
+      "Final LGD",
+      "Status Koreksi"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "Date",
+      "DateString",
+      "Dates",
+      "Filter",
+      "Page",
+      "Pages",
+      "Periode",
+      "bank",
+      "bankRes",
+      "date",
+      "dateFilter",
+      "dates",
+      "datesRes",
+      "jenisAkad",
+      "page",
+      "pages",
+      "searchParams"
+    ]
+  },
+  "dashboard-zmacro-projection": {
+    "type": "NEW (lib)",
+    "files": [
+      "DashboardZMacroProjectionView.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "ZMacroProjectionData",
+        "fields": [
+          "segmen: string;",
+          "bucketT0: string; // \"Lancar (0 Hari)\" etc.",
+          "periodeProyeksi: string; // DD/MM/YYYY",
+          "standardError: number;",
+          "zMacroOptimis: number;",
+          "zMacroModerat: number;",
+          "zMacroPesimis: number;"
+        ]
+      },
+      {
+        "name": "ZMacroProjectionResponse",
+        "fields": [
+          "namaBank: string;",
+          "dataPosition: string;",
+          "availableSegments: { id: string; name: string"
+        ]
+      }
+    ],
+    "table_headers": [
+      "Segmen",
+      "Bucket T0",
+      "Periode Proyeksi",
+      "Std. Error",
+      "OPTIMIS",
+      "MODERAT",
+      "PESIMIS"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "Date",
+      "DateResult",
+      "DateTimeFormat",
+      "Filter",
+      "FilterColor",
+      "Filters",
+      "Limit",
+      "LimitChange",
+      "Page",
+      "PageChange",
+      "Pages",
+      "Periode",
+      "SearchParams",
+      "Segment",
+      "SegmentId",
+      "Segments",
+      "bankResult",
+      "date",
+      "dateFormatted",
+      "filter",
+      "limit",
+      "page",
+      "periodeProyeksi",
+      "periode_proyeksi",
+      "segment",
+      "segmentId",
+      "segmentResult",
+      "segments"
+    ]
+  },
+  "penentuan-CKPN": {
+    "type": "NEW (lib)",
+    "files": [
+      "AccountingJournal.tsx",
+      "ControlFilter.tsx",
+      "HeaderReport.tsx",
+      "MakroShocksCard.tsx",
+      "SummaryCards.tsx",
+      "TableReport.tsx",
+      "usePenentuanCKPN.ts",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "ControlFilterProps",
+        "fields": [
+          "inputPdStr: string;",
+          "setInputPdStr: (val: string) => void;",
+          "inputLgdStr: string;",
+          "setInputLgdStr: (val: string) => void;",
+          "selectedSegment: string;",
+          "setSelectedSegment: (val: string) => void;",
+          "tanggalKeputusan: string;",
+          "setTanggalKeputusan: (val: string) => void;",
+          "segmentOptions: SegmentOption[];",
+          "onRun: () => void;",
+          "loading: boolean;",
+          "themeColorBtnDownload?: string;",
+          "themeColorBtnFilter?: string;"
+        ]
+      },
+      {
+        "name": "HeaderReportProps",
+        "fields": [
+          "data: CKPNSimulationResponse | null;",
+          "tanggalKeputusan?: string;",
+          "setTanggalKeputusan?: (val: string) => void;"
+        ]
+      },
+      {
+        "name": "SegmentOption",
+        "fields": [
+          "segment: string;",
+          "name: string;"
+        ]
+      },
+      {
+        "name": "CKPNSegmentDetail",
+        "fields": [
+          "name: string;",
+          "Total_EAD: number;",
+          "CKPN_Final: number;",
+          "CKPN_Final_Simulasi: number;",
+          "varians: number;"
+        ]
+      },
+      {
+        "name": "CKPNSimulationResponse",
+        "fields": [
+          "namaBank: string; // Dynamic Nama Bank",
+          "idSkenario: string;",
+          "tanggalKeputusan: string;",
+          "statusDokumen: string;",
+          "periodeData: string; // Menggantikan Periode Evaluasi",
+          "penyesuaianPd: number;",
+          "penyesuaianLgd: number;",
+          "selectedSegment: string;",
+          "segmenTerdampakLabel: string;",
+          "skenarioMakroPd: string;",
+          "skenarioMakroLgd: string;",
+          "skenarioMakroOverall: string;",
+          "totalEAD: number;",
+          "totalCKPNBaseline: number;",
+          "totalCKPNSimulasi: number;",
+          "totalVarians: number;",
+          "hashLog: string;",
+          "themeColorBtnDownload?: string;",
+          "themeColorBtnFilter?: string;",
+          "data: CKPNSegmentDetail[];"
+        ]
+      }
+    ],
+    "table_headers": [
+      "SEGMENT PORTFOLIO",
+      "TOTAL EAD (RP)",
+      "CKPN BASELINE (RP)",
+      "CKPN FINAL SIMULASI (RP)",
+      "VARIANS (RP)"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "Date",
+      "DateStr",
+      "DateTimeFormat",
+      "Filter",
+      "FilterAll",
+      "FilterProps",
+      "PERIODE",
+      "Periode",
+      "SEGMENT",
+      "Segment",
+      "SegmentDetail",
+      "SegmentListService",
+      "SegmentOption",
+      "SegmentOptions",
+      "Segments",
+      "bankResult",
+      "date",
+      "dateResult",
+      "dateStr",
+      "periodeData",
+      "periodeDataStr",
+      "segmenTerdampakLabel",
+      "segment",
+      "segmentName",
+      "segmentOptions",
+      "segmentParam",
+      "segmentVal",
+      "segment_id",
+      "segments",
+      "tgl",
+      "tglVal",
+      "tgl_proses"
+    ]
+  },
+  "report-Laporan Uji-Valuasi-KualitasAppraisal": {
+    "type": "NEW (lib)",
+    "files": [
+      "FilterBar.tsx",
+      "ReportDocument.tsx",
+      "ReportHeader.tsx",
+      "ValuasiKualitasAppraisalView.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "FilterBarProps",
+        "fields": [
+          "selectedDate: string;",
+          "onDateChange: (date: string) => void;",
+          "availableDates: string[];",
+          "loading: boolean;",
+          "onExport: () => void;",
+          "hasData: boolean;",
+          "themeColorBtnDownload?: string;"
+        ]
+      },
+      {
+        "name": "ReportDocumentProps",
+        "fields": [
+          "data: ValuasiKualitasAppraisalResponse;"
+        ]
+      },
+      {
+        "name": "ReportHeaderProps",
+        "fields": [
+          "namaBank?: string;",
+          "tanggalPosisiData?: string;",
+          "tanggalCetak: string;",
+          "setTanggalCetak: (val: string) => void;",
+          "modul?: string;"
+        ]
+      },
+      {
+        "name": "RingkasanPortofolio",
+        "fields": [
+          "totalFasilitas: number;",
+          "underlyingAssetCount: number;",
+          "underlyingAssetPct: number;",
+          "additionalAssetCount: number;",
+          "additionalAssetPct: number;"
+        ]
+      },
+      {
+        "name": "StratifikasiItem",
+        "fields": [
+          "kategori: string;",
+          "jumlahAgunan: number;",
+          "totalMV: number;",
+          "totalLVAwal: number;",
+          "eligibleLVSelahPenalti: number;",
+          "diskonText: string;"
+        ]
+      },
+      {
+        "name": "ValuasiKualitasAppraisalResponse",
+        "fields": [
+          "namaBank: string;",
+          "tanggalPosisiData: string;",
+          "tanggalCetak: string;",
+          "modul: string;",
+          "availableDates: string[];",
+          "ringkasan: RingkasanPortofolio;",
+          "stratifikasi: StratifikasiItem[];",
+          "totalStratifikasi: {",
+          "jumlahAgunan: number;",
+          "totalMV: number;",
+          "totalLVAwal: number;",
+          "eligibleLVSelahPenalti: number;"
+        ]
+      }
+    ],
+    "table_headers": [
+      "Kategori Umur Appraisal",
+      "Jumlah Agunan",
+      "Total Market Value (MV)",
+      "Total Liquidation Value (LV) Awal",
+      "Eligible LV Setelah Penalti"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "BankName",
+      "Bulan",
+      "Date",
+      "DateChange",
+      "DateDisplay",
+      "DateIndo",
+      "DateString",
+      "Dates",
+      "FilterBar",
+      "FilterBarProps",
+      "PERIODE",
+      "Periode",
+      "bank",
+      "bankTitle",
+      "date",
+      "dateStr",
+      "dates",
+      "filter"
+    ]
+  },
+  "report-agregasi-lgd-stage2": {
+    "type": "NEW (lib)",
+    "files": [
+      "ReportAgregasiLGDStage2View.tsx",
+      "WaveBackground.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "Props",
+        "fields": [
+          "initialData: ReportAgregasiLGDStage2Response;"
+        ]
+      },
+      {
+        "name": "AgregasiLGDStage2Row",
+        "fields": [
+          "pemicu_sicr: string;",
+          "jml_fasilitas: number;",
+          "total_ead_default: number;",
+          "total_npv_pulih: number;",
+          "rata_lgd_mentah: number;",
+          "rata_lgd_final: number;",
+          "kena_unsecured_floor: number;"
+        ]
+      },
+      {
+        "name": "ThemeColors",
+        "fields": [
+          "color_bg_header: string;",
+          "color_text_primary: string;",
+          "color_text_muted: string;",
+          "color_btn_dwnld: string;",
+          "color_bg_box: string;",
+          "color_border: string;",
+          "color_accent: string;",
+          "color_btn_fltr_reprt: string;"
+        ]
+      },
+      {
+        "name": "ReportAgregasiLGDStage2Response",
+        "fields": [
+          "namaBank: string;",
+          "dataPosition: string;",
+          "theme: ThemeColors;",
+          "data: AgregasiLGDStage2Row[];"
+        ]
+      }
+    ],
+    "table_headers": [
+      "Pemicu SICR",
+      "Jml Fasilitas",
+      "Total EAD Default (Rp)",
+      "Total NPV Pulih (Rp)",
+      "Rata2 LGD Mentah",
+      "Rata2 LGD Final",
+      "Terkena Floor"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "Date",
+      "DateTimeFormat",
+      "Metode",
+      "STAGE",
+      "Stage",
+      "Stage2Data",
+      "Stage2Response",
+      "Stage2Row",
+      "Stage2View",
+      "bankResult",
+      "filter",
+      "stage2",
+      "stage2_default_cohort",
+      "stage2_final"
+    ]
+  },
+  "report-alokasi-agunan": {
+    "type": "NEW (lib)",
+    "files": [
+      "Footer.tsx",
+      "Header.tsx",
+      "ReportAlokasi.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "FooterProps",
+        "fields": [
+          "wormSignature: string;"
+        ]
+      },
+      {
+        "name": "HeaderProps",
+        "fields": [
+          "namaBank: string;",
+          "dataPosition: string;"
+        ]
+      },
+      {
+        "name": "AlokasiSummary",
+        "fields": [
+          "Total_Agunan_Diproses: number;",
+          "Total_Fasilitas_Terikat: number;",
+          "Total_NRV_Agunan_Utuh_A: number;",
+          "Total_NRV_Dialokasikan_B: number;",
+          "Varians_Pembulatan_Desimal: number;"
+        ]
+      },
+      {
+        "name": "AlokasiDetail",
+        "fields": [
+          "Tanggal_Laporan: string;",
+          "Nomor_Rekening: string;",
+          "Jenis_Akad: string;",
+          "EAD_Outstanding: number;",
+          "Bobot: string;",
+          "Alokasi_NRV_Diakui: number;"
+        ]
+      },
+      {
+        "name": "AlokasiReportResponse",
+        "fields": [
+          "namaBank: string;",
+          "dataPosition: string;",
+          "agunanId: string;",
+          "namaNasabah: string;",
+          "nrvUtuh: number;",
+          "summary: AlokasiSummary;",
+          "details: AlokasiDetail[];",
+          "executiveNote: string;",
+          "wormSignature: string;",
+          "themeColorBtnDownload?: string;"
+        ]
+      }
+    ],
+    "table_headers": [
+      "No Rekening",
+      "Jenis Akad",
+      "EAD Outstanding",
+      "Bobot",
+      "Alokasi NRV Diakui"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "Date",
+      "DateChange",
+      "Jenis",
+      "Jenis_Akad",
+      "SearchParams",
+      "bankResult",
+      "date",
+      "searchParams"
+    ]
+  },
+  "report-ecl-waterfall-attribution-chart": {
+    "type": "NEW (lib)",
+    "files": [
+      "ReportWaterfall.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "WaterfallSummaryQueryData",
+        "fields": [
+          "total_ultimate_ead: number;",
+          "safe_zone_pd: number;",
+          "exposure_at_risk: number;",
+          "collateral_recovery_lgd: number;",
+          "final_ckpn_ecl: number;",
+          "data_position: string;"
+        ]
+      },
+      {
+        "name": "SampleFacilityDetail",
+        "fields": [
+          "facility_id: string;",
+          "facility_name: string;",
+          "sektor_ekonomi: string;",
+          "staging_psak: string;",
+          "pd_percent: number;",
+          "lgd_percent: number;",
+          "ultimate_ead: number;",
+          "pd_reduction: number;",
+          "exposure_at_risk: number;",
+          "collateral_recovery: number;",
+          "final_ckpn: number;"
+        ]
+      },
+      {
+        "name": "WaterfallReportResponse",
+        "fields": [
+          "namaBank: string;",
+          "dataPosition: string;",
+          "summary: WaterfallSummaryQueryData;",
+          "sampleFacility: SampleFacilityDetail;",
+          "executiveNote: string;",
+          "wormSignature: string;",
+          "themeColorBtnDownload?: string;"
+        ]
+      }
+    ],
+    "table_headers": [],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "Date",
+      "Search",
+      "SearchInput",
+      "Stage",
+      "bankResult",
+      "date",
+      "dated",
+      "searchInput",
+      "segment",
+      "stage_psak",
+      "tgl_proses"
+    ]
+  },
+  "report-evaluasi-sicr-off-balance": {
+    "type": "NEW (lib)",
+    "files": [
+      "Filters.tsx",
+      "ReportEvaluasiSicrOffBalanceView.tsx",
+      "ReportTable.tsx",
+      "WaveBackground.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "FiltersProps",
+        "fields": [
+          "startDate: string;",
+          "endDate: string;",
+          "searchRekening?: string;",
+          "themeColorBtnDownload: string;",
+          "themeColorBtnFilterReport: string;"
+        ]
+      },
+      {
+        "name": "Props",
+        "fields": [
+          "data: ReportEvaluasiSicrOffBalanceResponse;",
+          "currentPage: number;",
+          "limit: number;"
+        ]
+      },
+      {
+        "name": "ReportTableProps",
+        "fields": [
+          "data: EvaluasiSicrOffBalanceRow[];",
+          "totalData: number;",
+          "currentPage: number;",
+          "limit: number;",
+          "startDate?: string;",
+          "endDate?: string;"
+        ]
+      },
+      {
+        "name": "EvaluasiSicrOffBalanceRow",
+        "fields": [
+          "no_rekening: string;",
+          "sisa_plafon: number;",
+          "ccf_rate: number;",
+          "indikator_sicr: string;",
+          "off_bal_ead: number;"
+        ]
+      },
+      {
+        "name": "ThemeColors",
+        "fields": [
+          "color_bg_header: string;",
+          "color_text_primary: string;",
+          "color_text_muted: string;",
+          "color_btn_dwnld: string;",
+          "color_bg_box: string;",
+          "color_border: string;",
+          "color_accent: string;",
+          "color_btn_fltr_reprt: string;"
+        ]
+      },
+      {
+        "name": "ReportEvaluasiSicrOffBalanceResponse",
+        "fields": [
+          "namaBank: string;",
+          "startDate: string;",
+          "endDate: string;",
+          "searchRekening?: string;",
+          "totalData: number;",
+          "data: EvaluasiSicrOffBalanceRow[];",
+          "themeColorBgHeader: string;",
+          "themeColorBtnDownload: string;",
+          "themeColorBtnFilterReport: string;"
+        ]
+      }
+    ],
+    "table_headers": [
+      "NO REKENING",
+      "SISA PLAFON (RP)",
+      "CCF RATE",
+      "INDIKATOR SICR",
+      "OFF-BAL EAD (RP)"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "DATE",
+      "Date",
+      "DateDisplay",
+      "DateNow",
+      "DateNowStr",
+      "DateParam",
+      "DateResult",
+      "FILTER",
+      "FILTERS",
+      "Filter",
+      "FilterReport",
+      "Filters",
+      "FiltersProps",
+      "Jenis_Akad",
+      "Limit",
+      "LimitChange",
+      "Limit_amount",
+      "Page",
+      "PageChange",
+      "Pages",
+      "Search",
+      "SearchParams",
+      "Stage",
+      "bankResult",
+      "date",
+      "dateResult",
+      "filter",
+      "jenis_instrumen",
+      "limit",
+      "page",
+      "periode",
+      "searchParams",
+      "searchRek",
+      "searchRekening",
+      "searchRekeningParam"
+    ]
+  },
+  "report-kalkulasi-LGD-CollBase": {
+    "type": "NEW (lib)",
+    "files": [
+      "FilterDate.tsx",
+      "Header.tsx",
+      "ReportKalkulasi.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "AgregasiLGD",
+        "fields": [
+          "Total_Exposure_at_Default_EAD: number;",
+          "Total_PV_Collateral_Recovery: number;",
+          "Total_PV_Recovery_Costs: number;",
+          "Net_Present_Value_Agunan: number;",
+          "Total_Kerugian_Riil_LGD_Amount: number;",
+          "Rata_Rata_LGD_Portofolio: string;"
+        ]
+      },
+      {
+        "name": "SampelUjiPetik",
+        "fields": [
+          "Rekening_ID: string;",
+          "Jenis_Akad: string;",
+          "Exposure_EAD: number;",
+          "Nilai_Ekspektasi_Kotor: number;",
+          "Estimasi_Biaya: number;",
+          "PV_Collateral_Recovery: number;",
+          "PV_Recovery_Costs: number;",
+          "Visual_Rumus_1: string;",
+          "Visual_Rumus_2: string;",
+          "LGD_Decimal_Kotor: number;",
+          "Status_Validasi_Sistem: string;"
+        ]
+      },
+      {
+        "name": "ReportKalkulasiResponse",
+        "fields": [
+          "namaBank: string;",
+          "dataPosition: string;",
+          "wormSignature: string;",
+          "agregasi: AgregasiLGD | null;",
+          "sampelAudit: SampelUjiPetik[];",
+          "availableDates: string[];",
+          "themeColorBtnDownload?: string;"
+        ]
+      }
+    ],
+    "table_headers": [],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "Date",
+      "DateFilter",
+      "DateString",
+      "Dates",
+      "FilterDate",
+      "JenisAkad",
+      "Jenis_Akad",
+      "METODE",
+      "PERIODE",
+      "Periode",
+      "SearchParams",
+      "bankResult",
+      "date",
+      "dateCondition",
+      "dateFilter",
+      "dateStr",
+      "datesResult",
+      "searchParams"
+    ]
+  },
+  "report-kertas-kerja-konsolidasi-ultimate-ead": {
+    "type": "NEW (lib)",
+    "files": [
+      "Filters.tsx",
+      "ReportKertasKerjaKonsolidasiUltimateEadView.tsx",
+      "ReportTable.tsx",
+      "WaveBackground.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "FiltersProps",
+        "fields": [
+          "startDate: string;",
+          "endDate: string;",
+          "searchRekening?: string;",
+          "themeColorBtnDownload: string;",
+          "themeColorBtnFilterReport: string;"
+        ]
+      },
+      {
+        "name": "Props",
+        "fields": [
+          "data: ReportKertasKerjaKonsolidasiUltimateEadResponse;",
+          "currentPage: number;",
+          "limit: number;"
+        ]
+      },
+      {
+        "name": "ReportTableProps",
+        "fields": [
+          "data: KertasKerjaKonsolidasiUltimateEadRow[];",
+          "totalData: number;",
+          "currentPage: number;",
+          "limit: number;",
+          "startDate?: string;",
+          "endDate?: string;"
+        ]
+      },
+      {
+        "name": "KertasKerjaKonsolidasiUltimateEadRow",
+        "fields": [
+          "ultimate_id: string;",
+          "tgl_proses: string;",
+          "no_rekening: string;",
+          "stg_on: number | null;",
+          "stg_off: number | null;",
+          "stage_final: number;",
+          "is_sicr_final: number;",
+          "on_balance_ead: number;",
+          "off_balance_ead: number;",
+          "total_ultimate: number;"
+        ]
+      },
+      {
+        "name": "ThemeColors",
+        "fields": [
+          "color_bg_header: string;",
+          "color_text_primary: string;",
+          "color_text_muted: string;",
+          "color_btn_dwnld: string;",
+          "color_bg_box: string;",
+          "color_border: string;",
+          "color_accent: string;",
+          "color_btn_fltr_reprt: string;"
+        ]
+      },
+      {
+        "name": "ReportKertasKerjaKonsolidasiUltimateEadResponse",
+        "fields": [
+          "namaBank: string;",
+          "startDate: string;",
+          "endDate: string;",
+          "searchRekening?: string;",
+          "totalData: number;",
+          "data: KertasKerjaKonsolidasiUltimateEadRow[];",
+          "notes?: string[];",
+          "themeColorBgHeader: string;",
+          "themeColorBtnDownload: string;",
+          "themeColorBtnFilterReport: string;"
+        ]
+      }
+    ],
+    "table_headers": [
+      "NO REKENING",
+      "ON-BAL EAD (RP)",
+      "OFF-BAL EAD (RP)",
+      "STG ON",
+      "STG OFF",
+      "STG FINAL",
+      "ULTIMATE EAD (RP)"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "DATE",
+      "Date",
+      "DateDisplay",
+      "DateNow",
+      "DateNowStr",
+      "DateParam",
+      "DateResult",
+      "DateStr",
+      "FILTER",
+      "FILTERS",
+      "Filter",
+      "FilterReport",
+      "Filters",
+      "FiltersProps",
+      "Limit",
+      "LimitChange",
+      "Page",
+      "PageChange",
+      "Pages",
+      "Search",
+      "SearchParams",
+      "Stage",
+      "TglProses",
+      "bankResult",
+      "date",
+      "dateResult",
+      "filter",
+      "filtering",
+      "limit",
+      "page",
+      "periode",
+      "searchParams",
+      "searchRek",
+      "searchRekening",
+      "searchRekeningParam",
+      "stage",
+      "stage_final",
+      "tgl_proses"
+    ]
+  },
+  "report-laporan-penerapan-haircut": {
+    "type": "NEW (lib)",
+    "files": [
+      "ContentCard.tsx",
+      "FilterCard.tsx",
+      "Footer.tsx",
+      "Header.tsx",
+      "MetadataCard.tsx",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "ContentCardProps",
+        "fields": [
+          "reportData: any;"
+        ]
+      },
+      {
+        "name": "FilterCardProps",
+        "fields": [
+          "availableDates: string[];",
+          "selectedDate: string;",
+          "themeDownloadColor?: string;"
+        ]
+      },
+      {
+        "name": "HeaderProps",
+        "fields": [
+          "namaBank: string;"
+        ]
+      },
+      {
+        "name": "MetadataCardProps",
+        "fields": [
+          "targetSnapshot: string;",
+          "tanggalCetak: string;"
+        ]
+      }
+    ],
+    "table_headers": [
+      "Jenis Agunan",
+      "Vol",
+      "Haircut",
+      "Eligible LV (Gross)",
+      "Potongan Biaya",
+      "Net Realizable (NRV)"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "Date",
+      "DateChange",
+      "DateString",
+      "Dates",
+      "FilterCard",
+      "FilterCardProps",
+      "FilterColor",
+      "Jenis",
+      "Jenis_Agunan",
+      "PERIODE",
+      "bankResult",
+      "bankan",
+      "date",
+      "dateParam",
+      "dates",
+      "datesResult",
+      "jenis"
+    ]
+  },
+  "report-mutasi-arus-kas-pemulihan": {
+    "type": "NEW (lib)",
+    "files": [
+      "Filters.tsx",
+      "ReportMutasiArusKasView.tsx",
+      "ReportTable.tsx",
+      "WaveBackground.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "FiltersProps",
+        "fields": [
+          "startDate: string;",
+          "endDate: string;",
+          "themeColorBtnDownload: string;",
+          "themeColorBtnFilterReport: string;"
+        ]
+      },
+      {
+        "name": "Props",
+        "fields": [
+          "data: ReportMutasiArusKasResponse;",
+          "currentPage: number;",
+          "limit: number;"
+        ]
+      },
+      {
+        "name": "ReportTableProps",
+        "fields": [
+          "data: MutasiArusKasRow[];",
+          "totalData: number;",
+          "currentPage: number;",
+          "limit: number;",
+          "startDate?: string;",
+          "endDate?: string;"
+        ]
+      },
+      {
+        "name": "MutasiArusKasRow",
+        "fields": [
+          "no_rekening: string;",
+          "tgl_default: string;",
+          "tgl_recovery: string;",
+          "sumber_kas: string;",
+          "nominal_kotor: number;",
+          "haircut_pct: number;",
+          "biaya_langsung: number;",
+          "time_to_recovery: number;",
+          "epr_aktual_pct: number;",
+          "npv_bersih: number;"
+        ]
+      },
+      {
+        "name": "ThemeColors",
+        "fields": [
+          "color_bg_header: string;",
+          "color_text_primary: string;",
+          "color_text_muted: string;",
+          "color_btn_dwnld: string;",
+          "color_bg_box: string;",
+          "color_border: string;",
+          "color_accent: string;",
+          "color_btn_fltr_reprt: string;"
+        ]
+      },
+      {
+        "name": "ReportMutasiArusKasResponse",
+        "fields": [
+          "namaBank: string;",
+          "startDate: string;",
+          "endDate: string;",
+          "totalData: number;",
+          "data: MutasiArusKasRow[];",
+          "themeColorBgHeader: string;",
+          "themeColorBtnDownload: string;",
+          "themeColorBtnFilterReport: string;"
+        ]
+      }
+    ],
+    "table_headers": [
+      "NO REKENING",
+      "TGL DEFAULT",
+      "SUMBER KAS",
+      "NOMINAL KOTOR",
+      "HAIRCUT",
+      "TTR",
+      "EPR",
+      "NPV BERSIH"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "Date",
+      "DateDisplay",
+      "DateNow",
+      "DateNowStr",
+      "DateParam",
+      "DateStr",
+      "FILTER",
+      "FILTERS",
+      "Filter",
+      "FilterReport",
+      "Filters",
+      "FiltersProps",
+      "Limit",
+      "LimitChange",
+      "Page",
+      "PageChange",
+      "Pages",
+      "SearchParams",
+      "TGL",
+      "Tahun",
+      "Tgl",
+      "bankResult",
+      "date",
+      "dateResult",
+      "filter",
+      "jenis_sumber",
+      "limit",
+      "page",
+      "periode",
+      "searchParams",
+      "stage2_default_cohort",
+      "tahun",
+      "tgl_default",
+      "tgl_masuk_stage2",
+      "tgl_recovery"
+    ]
+  },
+  "report-outcome-tagging": {
+    "type": "NEW (lib)",
+    "files": [
+      "OutcomeTaggingView.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "OutcomeTaggingReportData",
+        "fields": [
+          "availableDates: string[];",
+          "header: {",
+          "namaBank: string;",
+          "targetSnapshot: string;",
+          "masaObservasiAwal: string;",
+          "masaObservasiAkhir: string;",
+          "tanggalEksekusi: string;",
+          "modulPemicu: string;"
+        ]
+      }
+    ],
+    "table_headers": [
+      "KODE STATUS",
+      "DESKRIPSI STATUS",
+      "JUMLAH REKENING",
+      "PERSENTASE (%)",
+      "NO",
+      "PENYEBAB TERBERAT (TRIGGER REASON)"
+    ],
+    "parameters": [
+      "BANK",
+      "BANKING",
+      "Bank",
+      "Banking",
+      "DATEADD",
+      "Date",
+      "DateChange",
+      "DateIndo",
+      "DateString",
+      "Dates",
+      "FILTER",
+      "FilterColor",
+      "PERIODE",
+      "Periode",
+      "bankResult",
+      "bulan",
+      "date",
+      "dateParam",
+      "dateStr",
+      "datesResult",
+      "filter",
+      "periode"
+    ]
+  },
+  "report-pemicu-sicr-kualitatif": {
+    "type": "NEW (lib)",
+    "files": [
+      "PemicuSicrView.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "PemicuSicrData",
+        "fields": [
+          "no_rekening: string;",
+          "akad_syariah: string;",
+          "dpd: number;",
+          "yield_drop_pct: number;",
+          "deviasi_fisik_pct: number;",
+          "is_taaddi_taqsir: string | number;",
+          "stage_awal: number;",
+          "stage_akhir: number;",
+          "sifat_kredit: string;",
+          "alasan_pemicu: string;"
+        ]
+      },
+      {
+        "name": "PemicuSicrReportResponse",
+        "fields": [
+          "namaBank: string;",
+          "dataPosition: string;",
+          "availableDates: string[];",
+          "data: PemicuSicrData[];",
+          "themeFilterColor?: string;",
+          "themeDownloadColor?: string;"
+        ]
+      }
+    ],
+    "table_headers": [
+      "No. Fasilitas",
+      "Akad",
+      "DPD",
+      "Yield Drop",
+      "Deviasi Fisik",
+      "Ta'addi/Taqsir",
+      "Stage Awal",
+      "Stage Akhir",
+      "Sifat Kredit",
+      "Alasan Pemicu SICR"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "Date",
+      "DateChange",
+      "DateString",
+      "Dates",
+      "FILTER",
+      "FilterColor",
+      "PERIODE",
+      "Page",
+      "Pages",
+      "Periode",
+      "Stage",
+      "bank",
+      "bankResult",
+      "date",
+      "dateParam",
+      "dates",
+      "datesResult",
+      "filter",
+      "page",
+      "periode",
+      "periode_data",
+      "stage_akhir",
+      "stage_awal"
+    ]
+  },
+  "report-pengujian-kepatuhan-syariah": {
+    "type": "NEW (lib)",
+    "files": [
+      "FilterDate.tsx",
+      "Header.tsx",
+      "ReportKepatuhan.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "HeaderProps",
+        "fields": [
+          "namaBank: string;",
+          "dataPosition: string;"
+        ]
+      },
+      {
+        "name": "AgregasiLGD",
+        "fields": [
+          "Jenis_Akad: string;",
+          "Vol_Fasilitas: number;",
+          "Total_EAD: number;",
+          "Total_PV_Recovery: number;",
+          "Rata_Rata_LGD_Pct: string;"
+        ]
+      },
+      {
+        "name": "SampelKalkulasi",
+        "fields": [
+          "Tanggal_Laporan: string | Date;",
+          "Nomor_Rekening: string;",
+          "Jenis_Akad: string;",
+          "EAD_Saat_Macet: number;",
+          "NRV_Agunan_Bersih: number;",
+          "Margin_Flat_EPR: string;",
+          "Asumsi_TTR_Tahun: number;",
+          "Kalkulasi_Manual_PV: number;",
+          "Hasil_PV_System: number;",
+          "LGD_Amount: number;",
+          "LGD_Percentage: string;"
+        ]
+      },
+      {
+        "name": "ReportKepatuhanResponse",
+        "fields": [
+          "namaBank: string;",
+          "dataPosition: string;",
+          "wormSignature: string;",
+          "agregasi: AgregasiLGD[];",
+          "sampelAudit: SampelKalkulasi[];",
+          "themeFilterColor?: string;",
+          "themeDownloadColor?: string;"
+        ]
+      }
+    ],
+    "table_headers": [
+      "Jenis Akad",
+      "Vol Fasilitas",
+      "Total EAD",
+      "Total PV Recovery",
+      "Rata-Rata LGD %"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "DATED",
+      "Date",
+      "DateChange",
+      "DateString",
+      "FilterColor",
+      "FilterDate",
+      "JENIS",
+      "Jenis",
+      "JenisAkad",
+      "Jenis_Akad",
+      "PERIODE",
+      "Periode",
+      "SearchParams",
+      "Tahun",
+      "bankResult",
+      "date",
+      "dateCondition",
+      "dateFilter",
+      "filter",
+      "searchParams",
+      "tahun"
+    ]
+  },
+  "report-proyeksi-z-macro": {
+    "type": "NEW (lib)",
+    "files": [
+      "ProyeksiZMacroView.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "ProyeksiZMacroViewProps",
+        "fields": [
+          "initialData: ProyeksiZMacroResponse;",
+          "selectedTanggalMulai: string;",
+          "selectedTanggalSelesai: string;",
+          "selectedSegmentId: string;"
+        ]
+      },
+      {
+        "name": "ProyeksiZMacroData",
+        "fields": [
+          "segmen: string;",
+          "bucketAwal: string; // \"Bucket T0\"",
+          "periodeProyeksi: string; // \"Periode Proyeksi\"",
+          "standardError: number; // \"Standard Error (SE)\"",
+          "zMacroOptimis: number; // \"Z-Macro Optimis\"",
+          "zMacroModerat: number; // \"Z-Macro Moderat\"",
+          "zMacroPesimis: number; // \"Z-Macro Pesimis\""
+        ]
+      },
+      {
+        "name": "ProyeksiZMacroResponse",
+        "fields": [
+          "namaBank: string;",
+          "dataPosition: string;",
+          "availableSegments: { id: string, name: string"
+        ]
+      }
+    ],
+    "table_headers": [
+      "Kualitas Pembiayaan (Hari Tunggakan)",
+      "Periode Proyeksi",
+      "Standard Error (SE)",
+      "Z-Macro Optimis",
+      "Z-Macro Moderat",
+      "Z-Macro Pesimis"
+    ],
+    "parameters": [
+      "Bank",
+      "Date",
+      "DateResult",
+      "DateTimeFormat",
+      "Filter",
+      "FilterColor",
+      "Limit",
+      "LimitChange",
+      "Page",
+      "PageChange",
+      "Pages",
+      "Periode",
+      "SearchParams",
+      "SegmentId",
+      "Segments",
+      "date",
+      "filter",
+      "limit",
+      "page",
+      "periode",
+      "periodeProyeksi",
+      "periode_proyeksi",
+      "segmenTerpilihText",
+      "segment",
+      "segmentId",
+      "segments"
+    ]
+  },
+  "report-uji-asumsi-klasik": {
+    "type": "NEW (lib)",
+    "files": [
+      "DetailModal.tsx",
+      "UjiAsumsiKlasikView.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "DetailModalProps",
+        "fields": [
+          "isOpen: boolean;",
+          "onClose: () => void;",
+          "data: UjiAsumsiKlasikData | null;"
+        ]
+      },
+      {
+        "name": "UjiAsumsiKlasikViewProps",
+        "fields": [
+          "initialData: UjiAsumsiKlasikResponse;",
+          "selectedTanggalMulai: string;",
+          "selectedTanggalSelesai: string;",
+          "selectedSegmentId: string;"
+        ]
+      },
+      {
+        "name": "UjiAsumsiKlasikData",
+        "fields": [
+          "segmen: string;",
+          "bucket_awal: number;",
+          "kolektibilitas: string;",
+          "r_square: number;",
+          "durbin_watson: number;",
+          "status_model: string;",
+          "is_model_valid: number;"
+        ]
+      },
+      {
+        "name": "UjiAsumsiKlasikResponse",
+        "fields": [
+          "namaBank: string;",
+          "dataPosition: string;",
+          "availableSegments: { id: string, name: string"
+        ]
+      }
+    ],
+    "table_headers": [
+      "Segmen Portofolio",
+      "Kolektibilitas Pembiayaan",
+      "R-Square",
+      "Durbin-Watson",
+      "Status Model",
+      "Aksi"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "Date",
+      "DateResult",
+      "DateTimeFormat",
+      "Filter",
+      "FilterColor",
+      "Limit",
+      "LimitChange",
+      "Page",
+      "PageChange",
+      "Pages",
+      "Periode",
+      "SearchParams",
+      "SegmentId",
+      "Segments",
+      "bank",
+      "bankResult",
+      "date",
+      "filter",
+      "limit",
+      "page",
+      "periode",
+      "periode_model",
+      "segment",
+      "segmentId",
+      "segments"
+    ]
+  },
+  "report-uji-statistik-regresi": {
+    "type": "NEW (lib)",
+    "files": [
+      "UjiStatistikView.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "UjiStatistikData",
+        "fields": [
+          "tgl_audit: string;",
+          "kode_segment: string;",
+          "macro_features: string;",
+          "r_square: number;",
+          "durbin_watson: number;",
+          "heteroskedastisitas_pval: number;",
+          "status_model: string;",
+          "Segment?: string;"
+        ]
+      },
+      {
+        "name": "SegmentData",
+        "fields": [
+          "id: string;",
+          "name: string;"
+        ]
+      },
+      {
+        "name": "UjiStatistikReportResponse",
+        "fields": [
+          "data: UjiStatistikData[];",
+          "namaBank: string;",
+          "dataPosition: string; // The formatted target date text",
+          "tanggalMulai: string;",
+          "tanggalSelesai: string;",
+          "availableSegments: SegmentData[];",
+          "availablePeriods?: string[];",
+          "themeDownloadColor?: string;",
+          "themeFilterColor?: string;",
+          "totalData?: number;",
+          "totalPages?: number;",
+          "currentPage?: number;"
+        ]
+      }
+    ],
+    "table_headers": [
+      "Segmen",
+      "Model Makroekonomi",
+      "R-Square",
+      "Durbin-Watson",
+      "Heteroskedastisitas (White)"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "Date",
+      "DateNow",
+      "DateResult",
+      "DateTimeFormat",
+      "FILTER",
+      "Filter",
+      "FilterColor",
+      "FilterSegment",
+      "FilterTanggalMulai",
+      "FilterTanggalSelesai",
+      "Limit",
+      "PERIODE",
+      "Page",
+      "Pages",
+      "Periode",
+      "PeriodeMulai",
+      "SearchParams",
+      "Segment",
+      "SegmentData",
+      "SegmentId",
+      "Segments",
+      "Stage",
+      "bank",
+      "bankResult",
+      "date",
+      "dateNowStr",
+      "dateQuery",
+      "dateResult",
+      "filter",
+      "filterSegment",
+      "filterTanggalMulai",
+      "filterTanggalSelesai",
+      "filters",
+      "limit",
+      "page",
+      "periode",
+      "periode_mulai",
+      "search",
+      "segment",
+      "segmentId",
+      "segmentQuery",
+      "segments",
+      "tgl_audit"
+    ]
+  },
+  "report-validasi-komputasi-grand-formula-ecl": {
+    "type": "NEW (lib)",
+    "files": [
+      "Filters.tsx",
+      "ReportTable.tsx",
+      "WaveBackground.tsx",
+      "index.ts",
+      "index.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "FiltersProps",
+        "fields": [
+          "startDate: string;",
+          "endDate: string;",
+          "themeColorBtnDownload: string;",
+          "themeColorBtnFilterReport: string;"
+        ]
+      },
+      {
+        "name": "ReportTableProps",
+        "fields": [
+          "data: ValidasiKomputasiRow[];",
+          "totalData: number;",
+          "currentPage: number;",
+          "limit: number;",
+          "startDate?: string;",
+          "endDate?: string;"
+        ]
+      },
+      {
+        "name": "ValidasiKomputasiRow",
+        "fields": [
+          "no_rekening: string;",
+          "stage_psak: number | string;",
+          "ead_secured: number;",
+          "ead_unsecured: number;",
+          "final_pd_rate: number;",
+          "lgd_secured: number;",
+          "lgd_unsecured: number;",
+          "nominal_ecl_secured: number;",
+          "nominal_ecl_unsecured: number;",
+          "total_ecl_statistik: number;"
+        ]
+      },
+      {
+        "name": "ValidasiKomputasiResponse",
+        "fields": [
+          "namaBank: string;",
+          "startDate: string;",
+          "endDate: string;",
+          "themeColorBtnDownload: string;",
+          "themeColorBtnFilterReport: string;",
+          "themeColorBgHeader: string;",
+          "totalData: number;",
+          "data: ValidasiKomputasiRow[];"
+        ]
+      }
+    ],
+    "table_headers": [
+      "No Rekening",
+      "Stage",
+      "Final PD",
+      "LGD Sec",
+      "LGD Unsec",
+      "ECL Secured",
+      "ECL Unsecured",
+      "Total ECL Statistik"
+    ],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "Date",
+      "DateNow",
+      "DateParam",
+      "DateResult",
+      "DateStr",
+      "FILTER",
+      "Filter",
+      "FilterReport",
+      "Filters",
+      "FiltersProps",
+      "Limit",
+      "LimitChange",
+      "Page",
+      "PageChange",
+      "Pages",
+      "SearchParams",
+      "Stage",
+      "bankResult",
+      "date",
+      "dateNow",
+      "dateResult",
+      "filter",
+      "limit",
+      "limitNum",
+      "page",
+      "pageNum",
+      "searchParams",
+      "stage_psak"
+    ]
+  },
+  "DefinisiAuditTrailFasilitas-Asal-Usul-Anomali": {
+    "type": "OLD (report/services)",
+    "files": [
+      "DefinisiAuditTrailFasilitasAsalUsulAnomali.service.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "AuditTrailItem",
+        "fields": [
+          "tanggalLaporan: string;",
+          "segment: string;",
+          "nomorRekening: string;",
+          "jenisAkad: string;",
+          "tipeAgunan: string;",
+          "nilaiPasar: number;",
+          "totalHaircut: number;",
+          "nrv: number;",
+          "eadNetto: number;",
+          "surplus: number;",
+          "akarPenyebab: string;",
+          "psakStage: number;"
+        ]
+      }
+    ],
+    "table_headers": [],
+    "parameters": [
+      "Bank",
+      "Date",
+      "FilterColor",
+      "Jenis_Akad",
+      "Segment",
+      "SegmentOptions",
+      "Stage",
+      "Stage_PSAK",
+      "bankName",
+      "jenisAkad",
+      "periode",
+      "segment",
+      "segmentList",
+      "segmentOptions",
+      "segment_name"
+    ]
+  },
+  "Laporan-Matriks-Konversi-TTC-ke-PIT-PD-service": {
+    "type": "OLD (report/services)",
+    "files": [
+      "LaporanMatriksKonversiTTCkePITPD.service.ts"
+    ],
+    "interfaces": [],
+    "table_headers": [],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "FilterColor",
+      "Periode",
+      "PeriodeMatriksKonversi",
+      "bankName",
+      "segment_id",
+      "stage"
+    ]
+  },
+  "Query": {
+    "type": "OLD (report/services)",
+    "files": [
+      "bankNameQuery.service.ts",
+      "auditSensitivitasQuery.service.ts",
+      "DefinisiAuditTrailFasilitasAsalUsulAnomali.query.ts",
+      "eadMetodeQuery.service.ts",
+      "eadRevolvingDetailQuery.service.ts",
+      "eadRevolvingQuery.service.ts",
+      "eadSegmentQuery.service.ts",
+      "jurnalCKPNDetailQuery.service.ts",
+      "jurnalCKPNQuery.service.ts",
+      "jurnalCOAMappingQuery.service.ts",
+      "jurnalSegmentQuery.service.ts",
+      "jurnalValutaQuery.service.ts",
+      "LaporanMatriksKonversiTTCkePITPD.query.ts",
+      "laporan-proyeksiamortasi.query.ts",
+      "paramVintagePenaltyQuery.service.ts",
+      "lgdKolektifDetailQuery.service.ts",
+      "lgdKolektifQuery.service.ts",
+      "lgdMetodeQuery.service.ts",
+      "lgdSegmentQuery.service.ts",
+      "paramVintagePenaltyQuery.service.ts",
+      "SimulasiDampakFinansial.query.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "AuditSensitivitasQueryResult",
+        "fields": [
+          "tanggalMulai: string;",
+          "tanggalSelesai: string;",
+          "items: Record<string, unknown>[];"
+        ]
+      },
+      {
+        "name": "EADMethodOption",
+        "fields": [
+          "code: string;",
+          "desc: string;"
+        ]
+      },
+      {
+        "name": "EADReportParameters",
+        "fields": [
+          "tanggalLaporan: string | null;",
+          "metodeOptions: EADMethodOption[];"
+        ]
+      },
+      {
+        "name": "EADRevolvingDetailQueryResult",
+        "fields": [
+          "items: Record<string, unknown>[];",
+          "totalCount: number;"
+        ]
+      },
+      {
+        "name": "EADSegmentOption",
+        "fields": [
+          "id: string;",
+          "nama_segmen: string;"
+        ]
+      },
+      {
+        "name": "JurnalSegmentOption",
+        "fields": [
+          "id: string;",
+          "nama_segmen: string;"
+        ]
+      },
+      {
+        "name": "ValutaOption",
+        "fields": [
+          "sandi: string;",
+          "keterangan: string;"
+        ]
+      },
+      {
+        "name": "JurnalReportParameters",
+        "fields": [
+          "tanggalLaporan: string | null;",
+          "tanggalLaporanPrev: string | null;",
+          "valutaOptions: ValutaOption[];"
+        ]
+      },
+      {
+        "name": "LGDDetailFacilityQueryResult",
+        "fields": [
+          "items: Record<string, unknown>[];",
+          "totalCount: number;"
+        ]
+      },
+      {
+        "name": "LGDMethodOption",
+        "fields": [
+          "code: string;",
+          "desc: string;"
+        ]
+      },
+      {
+        "name": "LGDReportParameters",
+        "fields": [
+          "tanggalLaporan: string | null;",
+          "metodeOptions: LGDMethodOption[];",
+          "skenarioMakro: string;"
+        ]
+      },
+      {
+        "name": "SegmentOption",
+        "fields": [
+          "id: string;",
+          "nama_segmen: string;"
+        ]
+      },
+      {
+        "name": "SimulasiDampakFinansialData",
+        "fields": [
+          "Tanggal_Laporan: Date | string;",
+          "Nomor_rekening: string;",
+          "Kode_Segment: string;",
+          "Jenis_Akad: string;",
+          "StageOri: number;",
+          "BucketOri: number;",
+          "PD_Berdasarkan_DPD: number;",
+          "Stage: number;",
+          "Bucket: number;",
+          "DPD: number;",
+          "PD_Parameter_SICR: number;",
+          "LGD: number;",
+          "Baki_Debet: number;",
+          "ECL_Berdasarkan_DPD: number;",
+          "ECL_Berdasarkan_SICR: number;",
+          "Selisih_ECL: number;"
+        ]
+      },
+      {
+        "name": "GetSimulasiDampakFinansialParams",
+        "fields": [
+          "startDate?: string;",
+          "endDate?: string;",
+          "tanggalLaporan?: string;",
+          "jenisAkad?: string;",
+          "noRekening?: string;",
+          "kodeSegment?: string;"
+        ]
+      }
+    ],
+    "table_headers": [],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "BankName",
+      "Bulan_Ke",
+      "Bulan_Max",
+      "Bulan_Min",
+      "DATE",
+      "DATEADD",
+      "DATEDIFF",
+      "DATEFROMPARTS",
+      "Date",
+      "DateNow",
+      "DateParam",
+      "DateRes",
+      "DateStr",
+      "FILTER",
+      "Filter",
+      "Jenis",
+      "JenisAkad",
+      "JenisValuta",
+      "Jenis_Agunan",
+      "Jenis_Akad",
+      "Jenis_Valuta",
+      "Limit",
+      "MetodeOptions",
+      "Metode_EAD",
+      "Metode_LGD",
+      "PageSize",
+      "PeriodeMatriksKonversi",
+      "PeriodeRange",
+      "SEGMENTED",
+      "STAGE",
+      "Segment",
+      "SegmentFooterAvg",
+      "SegmentId",
+      "SegmentOption",
+      "SegmentOptions",
+      "SegmentParam",
+      "Stage",
+      "StageOri",
+      "Stage_PSAK",
+      "Valuta",
+      "ValutaOption",
+      "bank",
+      "bulan",
+      "bulanMax",
+      "bulanMin",
+      "bulan_max",
+      "bulan_min",
+      "date",
+      "dateRes",
+      "dateStr",
+      "dated_at",
+      "datenow",
+      "filter",
+      "jenisAgunan",
+      "jenisAkad",
+      "jenisValuta",
+      "jenis_agunan",
+      "metodeEad",
+      "metodeLgd",
+      "metodeOptions",
+      "metodeRes",
+      "noRekening",
+      "norek",
+      "page",
+      "pageSize",
+      "periode",
+      "periodeParam",
+      "periodeStr",
+      "segment",
+      "segmentExact",
+      "segmentId",
+      "segmentParam",
+      "segment_id",
+      "segment_name",
+      "stage",
+      "stage_final",
+      "stage_psak",
+      "tahun",
+      "tglMulai",
+      "tglSampai",
+      "valutaOptions",
+      "valutaRes"
+    ]
+  },
+  "Simulasi-dampak-finansial": {
+    "type": "OLD (report/services)",
+    "files": [
+      "SimulasiDampakFinansial.service.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "FetchSimulasiDampakFinansialParams",
+        "fields": [
+          "startDate?: string;",
+          "endDate?: string;",
+          "tanggalLaporan?: string;",
+          "date?: string;",
+          "jenisAkad?: string;",
+          "akad?: string;",
+          "noRekening?: string;",
+          "searchRekening?: string;",
+          "kodeSegment?: string;",
+          "segment?: string;"
+        ]
+      }
+    ],
+    "table_headers": [],
+    "parameters": [
+      "Bank",
+      "Date",
+      "DateParam",
+      "FilterColor",
+      "Segment",
+      "SegmentParam",
+      "date",
+      "jenisAkad",
+      "noRekening",
+      "searchRekening",
+      "segment"
+    ]
+  },
+  "audit-sensitivitas-makroekonomi-report": {
+    "type": "OLD (report/services)",
+    "files": [
+      "dashboardAuditSensitivitas.service.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "MacroSensitivityRow",
+        "fields": [
+          "modelId: string;",
+          "variabelMakro: string;",
+          "kategoriSektor: string;",
+          "koefisien: number;",
+          "pValue: number;",
+          "tingkatDiferensiasi: number;",
+          "periodeLag: number;",
+          "signifikan: \"Ya\" | \"Tidak\";",
+          "statusEngineFLI: \"ACCEPTED\" | \"REJECTED\";"
+        ]
+      },
+      {
+        "name": "AuditSensitivitasSummary",
+        "fields": [
+          "bankName: string;",
+          "tanggalMulai: string;",
+          "tanggalSelesai: string;",
+          "items: MacroSensitivityRow[];"
+        ]
+      }
+    ],
+    "table_headers": [],
+    "parameters": [
+      "BANK",
+      "BankName",
+      "Periode",
+      "Periode_Lag",
+      "bankName",
+      "bankNameQuery",
+      "periodeLag"
+    ]
+  },
+  "ead-revolving-report": {
+    "type": "OLD (report/services)",
+    "files": [
+      "dashboardEADRevolving.service.ts",
+      "dashboardEADRevolvingDetail.service.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "EADRevolvingRow",
+        "fields": [
+          "segmenPortofolio: string;",
+          "totalRekening: number;",
+          "totalPlafon: number;",
+          "totalBakiDebet: number;",
+          "totalSisaPlafon: number;",
+          "avgCCFHistoris: number;",
+          "totalEADOffBalance: number;",
+          "totalEADFinal: number;"
+        ]
+      },
+      {
+        "name": "EADRevolvingSummary",
+        "fields": [
+          "bankName: string;",
+          "tanggalMulai: string | null;",
+          "tanggalSelesai: string | null;",
+          "metodeEad: string;",
+          "metodeEadOptions: EADMethodOption[];",
+          "items: EADRevolvingRow[];",
+          "totalBank: EADRevolvingRow;"
+        ]
+      },
+      {
+        "name": "EADRevolvingDetailRow",
+        "fields": [
+          "noFasilitas: string;",
+          "cif: string;",
+          "namaNasabah: string;",
+          "plafon: number;",
+          "bakiDebet: number;",
+          "sisaPlafon: number;",
+          "ccfHistoris: number;",
+          "eadOffBal: number;",
+          "eadTotal: number;"
+        ]
+      },
+      {
+        "name": "EADRevolvingDetailSummary",
+        "fields": [
+          "segmentName: string;",
+          "selectedSegmentId: string;",
+          "segmentOptions: EADSegmentOption[];",
+          "items: EADRevolvingDetailRow[];",
+          "totalCount: number;",
+          "page: number;",
+          "pageSize: number;",
+          "totalPages: number;",
+          "avgRow: EADRevolvingDetailRow;"
+        ]
+      }
+    ],
+    "table_headers": [],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "BankName",
+      "Limit",
+      "MetodeEad",
+      "MetodeQuery",
+      "Pages",
+      "SegmentId",
+      "SegmentOption",
+      "SegmentOptions",
+      "SegmentQuery",
+      "bankName",
+      "bankNameQuery",
+      "metodeEad",
+      "metodeEadOptions",
+      "metodeOptions",
+      "page",
+      "pageSize",
+      "segmentName",
+      "segmentOptions",
+      "segments"
+    ]
+  },
+  "jurnal-ckpn-dashboard": {
+    "type": "OLD (report/services)",
+    "files": [
+      "dashboardJurnalCKPN.service.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "JurnalCKPNRow",
+        "fields": [
+          "segmenPortofolio: string;",
+          "targetECLBulanIni: number;",
+          "saldoCKPNBulanLalu: number;",
+          "deltaNeto: number;",
+          "aksiAkuntansi: \"Top-up\" | \"Release\" | string;"
+        ]
+      },
+      {
+        "name": "COAMappingRow",
+        "fields": [
+          "segmenAksi: string;",
+          "coaDebet: string;",
+          "deskripsiDebet: string;",
+          "coaKredit: string;",
+          "deskripsiKredit: string;"
+        ]
+      },
+      {
+        "name": "JurnalCKPNDetailRow",
+        "fields": [
+          "cifNoFas: string;",
+          "akad: string;",
+          "stage: number | string;",
+          "eadNetto: number;",
+          "pdPIT: number;",
+          "lgdNom: number;",
+          "targetECLBulanIni: number;",
+          "saldoCKPNBulanLalu: number;",
+          "deltaNeto: number;",
+          "aksiAkuntansi: string;"
+        ]
+      },
+      {
+        "name": "JurnalCKPNDetailSummary",
+        "fields": [
+          "segmentName: string;",
+          "items: JurnalCKPNDetailRow[];",
+          "subtotalRow: JurnalCKPNDetailRow;"
+        ]
+      },
+      {
+        "name": "JurnalCKPNDashboardData",
+        "fields": [
+          "bankName: string;",
+          "tanggalLaporan: string | null;",
+          "tanggalLaporanPrev: string | null;",
+          "jenisValuta: string;",
+          "valutaOptions: ValutaOption[];",
+          "summaryItems: JurnalCKPNRow[];",
+          "totalBank: JurnalCKPNRow;",
+          "coaMappings: COAMappingRow[];",
+          "detailFacility: JurnalCKPNDetailSummary;"
+        ]
+      }
+    ],
+    "table_headers": [],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "BankName",
+      "Bulan",
+      "BulanIni",
+      "BulanLalu",
+      "Valuta",
+      "ValutaOption",
+      "ValutaQuery",
+      "bankName",
+      "bankNameQuery",
+      "jenisValuta",
+      "segmentName",
+      "stage",
+      "valutaOptions"
+    ]
+  },
+  "jurnal-ckpn-report": {
+    "type": "OLD (report/services)",
+    "files": [
+      "dashboardJurnalCKPN.service.ts",
+      "dashboardJurnalCKPNDetail.service.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "JurnalCKPNRow",
+        "fields": [
+          "segmenPortofolio: string;",
+          "targetECLBulanIni: number;",
+          "saldoCKPNBulanLalu: number;",
+          "deltaNeto: number;",
+          "aksiAkuntansi: \"Top-up\" | \"Release\" | string;"
+        ]
+      },
+      {
+        "name": "COAMappingRow",
+        "fields": [
+          "segmenAksi: string;",
+          "coaDebet: string;",
+          "deskripsiDebet: string;",
+          "coaKredit: string;",
+          "deskripsiKredit: string;"
+        ]
+      },
+      {
+        "name": "JurnalCKPNDetailRow",
+        "fields": [
+          "cifNoFas: string;",
+          "akad: string;",
+          "stage: number | string;",
+          "eadNetto: number;",
+          "pdPIT: number;",
+          "lgdNom: number;",
+          "targetECLBulanIni: number;",
+          "saldoCKPNBulanLalu: number;",
+          "deltaNeto: number;",
+          "aksiAkuntansi: string;"
+        ]
+      },
+      {
+        "name": "JurnalCKPNDetailSummary",
+        "fields": [
+          "segmentName: string;",
+          "items: JurnalCKPNDetailRow[];",
+          "subtotalRow: JurnalCKPNDetailRow;"
+        ]
+      },
+      {
+        "name": "JurnalCKPNDashboardData",
+        "fields": [
+          "bankName: string;",
+          "tanggalMulai: string | null;",
+          "tanggalSelesai: string | null;",
+          "tanggalLaporanPrev: string | null;",
+          "jenisValuta: string;",
+          "valutaOptions: ValutaOption[];",
+          "summaryItems: JurnalCKPNRow[];",
+          "totalBank: JurnalCKPNRow;",
+          "coaMappings: COAMappingRow[];",
+          "detailFacility: JurnalCKPNDetailSummary;"
+        ]
+      },
+      {
+        "name": "JurnalCKPNDetailRow",
+        "fields": [
+          "cifNoFas: string;",
+          "akad: string;",
+          "stage: number | string;",
+          "eadNetto: number;",
+          "pdPIT: number;",
+          "lgdNom: number;",
+          "targetECLBulanIni: number;",
+          "saldoCKPNBulanLalu: number;",
+          "deltaNeto: number;",
+          "aksiAkuntansi: string;"
+        ]
+      },
+      {
+        "name": "JurnalCKPNDetailSummary",
+        "fields": [
+          "segmentName: string;",
+          "selectedSegmentId: string;",
+          "segmentOptions: JurnalSegmentOption[];"
+        ]
+      }
+    ],
+    "table_headers": [],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "BankName",
+      "Bulan",
+      "BulanIni",
+      "BulanLalu",
+      "Date",
+      "SegmentId",
+      "SegmentName",
+      "SegmentOption",
+      "SegmentOptions",
+      "SegmentQuery",
+      "Valuta",
+      "ValutaOption",
+      "ValutaQuery",
+      "bankName",
+      "bankNameQuery",
+      "date",
+      "jenisValuta",
+      "segment",
+      "segmentName",
+      "segmentOptions",
+      "stage",
+      "valutaOptions"
+    ]
+  },
+  "laporan-proyeksiamortasi-service": {
+    "type": "OLD (report/services)",
+    "files": [
+      "laporan-proyeksimortasi.service.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "AmortisasiParams",
+        "fields": [
+          "tglMulai?: string | null;",
+          "tglSampai?: string | null;",
+          "noRekening?: string;"
+        ]
+      }
+    ],
+    "table_headers": [],
+    "parameters": [
+      "BANK",
+      "Bank",
+      "BankData",
+      "Banks",
+      "Date",
+      "DateObj",
+      "DateRes",
+      "DateStr",
+      "Tahun",
+      "bankName",
+      "bulan",
+      "noRekening",
+      "tahun",
+      "tglMulai",
+      "tglSampai"
+    ]
+  },
+  "lgd-kolektif-report": {
+    "type": "OLD (report/services)",
+    "files": [
+      "dashboardLGDDetailFacility.service.ts",
+      "dashboardLGDParameterSummary.service.ts"
+    ],
+    "interfaces": [
+      {
+        "name": "LGDDetailFacilityRow",
+        "fields": [
+          "cif: string;",
+          "noFas: string;",
+          "cifFas: string;",
+          "stage: string;",
+          "nominalEAD: number;",
+          "appraisal: number;",
+          "totalHaircut: number;",
+          "agunanDiakui: number;",
+          "biayaEksek: number;",
+          "estNominalNetCash: number;",
+          "unsecuredEAD: number;",
+          "lgdRate: number;",
+          "isFloorApplied?: boolean;"
+        ]
+      },
+      {
+        "name": "LGDDetailFacilitySummary",
+        "fields": [
+          "segmentName: string;",
+          "selectedSegmentId: string;",
+          "segmentOptions: SegmentOption[];",
+          "items: LGDDetailFacilityRow[];",
+          "totalCount: number;",
+          "page: number;",
+          "pageSize: number;",
+          "totalPages: number;",
+          "avgNominalEAD: number;",
+          "avgAppraisal: number;",
+          "avgLgdRate: number;"
+        ]
+      },
+      {
+        "name": "LGDParameterSummaryRow",
+        "fields": [
+          "Nama_Segmen: string;",
+          "Jenis_Agunan?: string;",
+          "Avg_Base_Haircut: number | null;",
+          "Avg_Vintage_Penalty: number | null;",
+          "Avg_Biaya_Eksekusi: number | null;",
+          "LGD_Floor_Set: number | null;"
+        ]
+      },
+      {
+        "name": "LGDParameterSummaryData",
+        "fields": [
+          "bankName: string;",
+          "tanggalMulai: string | null;",
+          "tanggalSelesai: string | null;",
+          "metodeLgd: string;",
+          "metodeLgdOptions: LGDMethodOption[];",
+          "skenarioMakro: string;",
+          "items: LGDParameterSummaryRow[];",
+          "themeData?: any;"
+        ]
+      }
+    ],
+    "table_headers": [],
+    "parameters": [
+      "BANK",
+      "BankName",
+      "Date",
+      "Jenis_Agunan",
+      "MetodeLgd",
+      "MetodeQuery",
+      "Pages",
+      "SegmentFooterAvg",
+      "SegmentId",
+      "SegmentOption",
+      "SegmentOptions",
+      "SegmentQuery",
+      "Stage",
+      "bankName",
+      "bankNameQuery",
+      "metodeLgd",
+      "metodeLgdOptions",
+      "metodeOptions",
+      "metode_lgd",
+      "page",
+      "pageSize",
+      "segment",
+      "segmentName",
+      "segmentOptions",
+      "segments",
+      "stage"
+    ]
+  }
+}
